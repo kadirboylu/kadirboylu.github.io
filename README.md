@@ -1,5 +1,4 @@
 # **FreeCodeCamp Projects**
----
 - [Tribute Page](https://kadirboylu.github.io/tribute-page/)
 ---
 
