@@ -24,7 +24,7 @@
   background-color: white;
   border-radius: 10px;
   margin: 10px auto 0 auto;
-  padding: 20px;
+  padding-top: 20px;
   width: 90%;
   height: auto;
 }
@@ -45,7 +45,7 @@
 }
 .timeline {
   border-left: 3px solid black;
-  max-width: 70%;
+  max-width: 80%;
   height: auto;
   margin: 10px auto 0 auto;
   padding: 10px;
@@ -67,10 +67,49 @@
   text-align: justify;
 }
 blockquote {
-  margin: 20px 0;
+  margin: 20px auto;
   font-size: 25px;
   font-style: italic;
+  max-width: 95%;
 }
 cite {
   font-weight: bold;
+}
+#ending {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  #main {
+    width: 100%;
+    margin: 0px auto;
+    font-size: 14px;
+    padding: 0;
+  }
+  #img-div {
+    width: 70%;
+  }
+  #img-caption {
+    font-size: 14px;
+  }
+  blockquote {
+    font-size: 14px;
+  }
+  #title {
+    padding-top: 10px;
+    font-size: 18px;
+  }
+  #first-p {
+    font-size: 16px;
+  }
+  #timeline-p {
+    font-size: 14px;
+  }
+  #tribute-info {
+    width: 100%;
+  }
+  .timeline {
+    max-width: 90%;
+    padding-left: 3px;
+    border-left: 2px solid black;
+  }
 }
