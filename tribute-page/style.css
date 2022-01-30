@@ -94,6 +94,10 @@ cite {
   blockquote {
     font-size: 14px;
   }
+  #ending {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
   #title {
     padding-top: 10px;
     font-size: 18px;
