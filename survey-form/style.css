@@ -3,45 +3,62 @@
 *::after {
   box-sizing: border-box;
 }
+body{
+  background: linear-gradient(black, #dd3315, #dd9715, #fff241, #f8f2a0);
+  background-repeat: no-repeat;
+  background-position: center;
+  height:fit-content;
+}
 .container {
-    max-width: 700px;
-    margin: auto;
+  max-width: 700px;
+  margin: auto;
+  color: white;
 }
 header {
-    text-align: center;
+  text-align: center;
 }
 #survey-form {
-    background-color: gray;
-    color: white;
-    border-radius: 1rem;
-    margin: auto;
-    padding: 0.5rem;
+  background-color: rgba(69, 89, 126, 0.5);
+  border-radius: 1rem;
+  margin: auto;
+  padding: 0.5rem;
 }
 .group {
-    margin: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
 }
 input,
 textarea,
 select{
-    display: block;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    border: none;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+button {
+  cursor: pointer;
+}
+input:focus,
+textarea:focus,
+select:focus,
+button:focus{
+  outline: 0;
+  box-shadow: 0 0 0.5rem green;
 }
 .group input[type = "radio"],
 .group input[type = "checkbox"] {
-    display: inline-block;
-    width: auto;
+  display: inline-block;
+  width: auto;
+  cursor: pointer;
 }
 label {
-    display: block;
-    margin: 0.5rem 0;
+  display: block;
+  margin: 0.5rem 0;
 }
 textarea {
-    resize: vertical;
-    min-height: 150px;
+  resize: vertical;
+  min-height: 150px;
 }
 #submit {
-    width: 100%;
+  width: 100%;
 }
