@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Supermercado+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Carter+One&family=Supermercado+One&display=swap');
 *,
 *::before,
 *::after {
@@ -8,6 +10,9 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   height:fit-content;
+}
+header {
+  font-family: 'Carter One', cursive;
 }
 .container {
   max-width: 700px;
@@ -22,6 +27,7 @@ header {
   border-radius: 1rem;
   margin: auto;
   padding: 0.5rem;
+  font-family: 'Acme', sans-serif;
 }
 .group {
   margin: 0.5rem 1rem;
@@ -37,13 +43,26 @@ select{
 }
 button {
   cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  color: white;
+  font-weight: bold;
+  background-color: #dd3315;
+}
+button:hover {
+  background-color: #da624d;
+}
+.cursor-pointer>label {
+  cursor: pointer;
 }
 input:focus,
 textarea:focus,
 select:focus,
 button:focus{
   outline: 0;
-  box-shadow: 0 0 0.5rem green;
+  box-shadow: 0 0 0.7rem #dd9715;
 }
 .group input[type = "radio"],
 .group input[type = "checkbox"] {
@@ -59,6 +78,30 @@ textarea {
   resize: vertical;
   min-height: 150px;
 }
-#submit {
+footer {
+  padding: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa {
+  text-decoration: none;
+  color: white;
   width: 100%;
+  height: 100%;
+}
+.card {
+  background-color: black;
+  text-align: center;
+  line-height: 3rem;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+}
+.card:hover {
+  background-color: rgb(59, 59, 59);
+  transform: scale(1.2);
+  transition: 1s;
 }
