@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+header {
+    text-align: center;
+}
+#survey-form {
+    background-color: gray;
+    color: white;
+    border-radius: 1rem;
+    margin: auto;
+    padding: 0.5rem;
+}
+.group {
+    margin: 0.5rem 1rem;
+}
+input,
+textarea,
+select{
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    border: none;
+}
+.group input[type = "radio"],
+.group input[type = "checkbox"] {
+    display: inline-block;
+    width: auto;
+}
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+#submit {
+    width: 100%;
+}
