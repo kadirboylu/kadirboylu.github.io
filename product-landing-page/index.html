@@ -13,28 +13,44 @@
 </head>
 <body>
   <main>
-    <header id="header">
-      <div class="company-logo">
-        <img 
-          src="img/flute-store-logo.png" 
-          alt="Flute Store" 
-          id="header-img">
-      </div>
-      <nav id="nav-bar">
-        <ul>
-          <li><a href="#why-us" class="nav-link">Why Us?</a></li>
-          <li><a href="#get-info" class="nav-link">Get Information</a></li>
-          <li><a href="#categories" class="nav-link">Categories</a></li>
-        </ul>  
-      </nav>
-      <div class="menu" id="toggle-button">
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
+  <header id="header">
+    <!-- logo -->
+    <div class="company-logo">
+      <img 
+      src="img/flute-store-logo.png" 
+      alt="Flute Store" 
+      id="header-img">
+    </div>
+    <!-- nav-bar -->
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="#why-us" class="nav-link">Why Us?</a></li>
+        <li><a href="#get-info" class="nav-link">Get Information</a></li>
+        <li><a href="#categories" class="nav-link">Categories</a></li>
+      </ul>  
+    </nav>
+    <!-- toggle menu button -->
+    <div class="menu" id="toggle-button">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
       </div> 
     </header>
+    <!-- mail form -->
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+      <h2>Original and high quality flutes!</h2>
+      <input 
+      name="email" 
+      id="email" 
+      type="email"
+      placeholder="Enter your email adress"
+      required
+      />
+      <input type="submit" id="submit" value="Contact Us!">
+    </form>
   </main>
 </body>
+<!-- menu script -->
 <script>
   const toggleButton = document.getElementById('toggle-button');
   const naviList = document.getElementById('nav-bar');
