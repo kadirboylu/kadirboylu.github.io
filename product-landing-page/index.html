@@ -25,9 +25,22 @@
           <li><a href="#why-us" class="nav-link">Why Us?</a></li>
           <li><a href="#get-info" class="nav-link">Get Information</a></li>
           <li><a href="#categories" class="nav-link">Categories</a></li>
-        </ul>    
+        </ul>  
       </nav>
+      <div class="menu" id="toggle-button">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div> 
     </header>
   </main>
 </body>
+<script>
+  const toggleButton = document.getElementById('toggle-button');
+  const naviList = document.getElementById('nav-bar');
+  
+  toggleButton.addEventListener('click', () => {
+    naviList.classList.toggle('active');
+  })
+</script>
 </html>
