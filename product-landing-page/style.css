@@ -156,6 +156,8 @@ nav ul li a:hover {
 
 #get-info {
   margin-top: 1rem;
+  width: 98%;
+  margin: auto;
   display: flex;
   justify-content: center;
 }
