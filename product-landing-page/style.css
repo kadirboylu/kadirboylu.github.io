@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Carter+One&family=Poppins:wght@200&family=Supermercado+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background: rgb(56, 95, 133);
+  min-height: 50px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.company-logo img {
+  height: 3rem;
+  margin-right: 0.2rem;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+nav ul li a:hover {
+  background-color: #f4d504;
+  border-radius: 0.3rem;
+}
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+  .company-logo img {
+    margin: auto;
+  }
+  nav{
+    background-color: rgb(32, 60, 88);
+    width: 100%;
+  }
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul li a:hover {
+    background-color: transparent;
+    border-radius: 0%;
+    color: #f4d504;
+  }
+}
