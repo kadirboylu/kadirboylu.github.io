@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Carter+One&family=Permanent+Marker&family=Poppins:wght@200&family=Supermercado+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Carter+One&family=Permanent+Marker&family=Poppins:wght@200&family=Supermercado+One&family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+body {
+  background-color: #eee;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#navbar {
+  background-color: rgb(95, 90, 80);
+  color: white;
+  position: fixed;
+  min-width: 250px;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+}
+
+#navbar header {
+  margin: 0.7rem 0.3rem;
+  text-align: center;
+  font-size: 1.75rem;
+  font-family: 'Acme', sans-serif;
+  font-weight: bold;
+}
+
+#navbar ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#navbar li {
+  border-top: 3px solid rgb(228, 228, 228);
+  list-style: none;
+  width: 100%;
+  position: relative;
+  font-size: 1.25rem;
+}
+
+#navbar a {
+  color: white;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#navbar a:hover {
+  color: rgb(146, 175, 230);
+}
+
+#main-doc {
+  margin-left: 310px;
+  padding: 1rem;
+}
+
+.main-section header {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.main-section p {
+  font-size: 1.25rem;
+  text-align: justify;
+}
+
+figure {
+  text-align: center;
+}
+
+figcaption {
+    padding-top: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.main-doc-img {
+  width: 70%;
+}
+
+@media (max-width: 850px) {
+  /* For mobile phones: */
+  #navbar ul {
+    border: 1px solid;
+    height: 207px;
+  }
+
+  #navbar li {
+    border-top: 1px solid rgb(228, 228, 228);
+  }
+
+  #navbar {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 270px;
+    border: none;
+    z-index: 1;
+    border-bottom: 1px solid;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+  }
+}
