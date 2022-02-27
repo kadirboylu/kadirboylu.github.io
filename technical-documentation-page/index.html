@@ -30,7 +30,7 @@
     </ul>
   </nav>
   <main id="main-doc">
-    <section class="main-section" id="#What_is_Modbus?">
+    <section class="main-section" id="What_is_Modbus?">
       <header>What is Modbus?</header>
       <article>
         <p>The Modbus communication protocol is the oldest and by far the most popular automation protocol in the field of process automation and SCADA (Supervisory Control and Data Acquisition).</p>
@@ -45,6 +45,64 @@
         </figure>
         <p>The development and update of Modbus protocols have been managed by the Modbus Organization. The Modbus Organization is an association of users and suppliers of Modbus-compliant devices.</p>
       </article>
+    </section>
+    <section class="main-section" id="Types_of_Modbus_Protocol">
+      <header>Types Of Modbus Protocol</header>
+      <article>
+        <p>Several versions of the Modbus protocol exist for the serial port and Ethernet and the most common are:</p>
+        <ul>
+          <li>Modbus RTU</li>
+          <li>Modbus ASCII</li>
+          <li>Modbus TCP</li>
+          <li>Modbus Plus</li>
+        </ul>
+        <figure class="img-container">
+          <img src="img/types-of-modbus-protocol-1.jpg" alt="types-of-modbus-protocol-1" class="main-doc-img">
+          <figcaption>Figure 3</figcaption>
+        </figure>
+        <p>Modicon published the Modbus communication interface for a multidrop network based on a Master-Slave architecture. Communication between the Modbus nodes is achieved with send request and read response type messages.</p>
+      </article>
+    </section>
+    <section class="main-section" id="Physical_Media">
+      <header>Physical Media</header>
+      <article>
+        <p>Modbus is an open standard that describes the messaging communication dialog.</p>
+        <p>Modbus communicates over several types of physical media such as:</p>
+        <ul>
+          <li>Serial RS-232</li>
+          <li>Serial RS-485</li>
+          <li>Serial RS-422</li>
+          <li>Ethernet</li>
+        </ul>
+        <figure class="img-container">
+          <img src="img/physical-media-1.gif" alt="physical media 1" class="main-doc-img">
+          <figcaption>Figure 4</figcaption>
+        </figure>
+        <p>The original Modbus interface ran on RS-232 serial communication, but most of the later Modbus implementations use RS-485 because it allowed:</p>
+        <ul>
+          <li>Longer distances.</li>
+          <li>Higher speeds.</li>
+          <li>The possibility of multiple devices on a single multi-drop network.</li>
+        </ul>
+        <figure class="img-container">
+          <img src="img/physical-media-2.jpg" alt="physical media 2" class="main-doc-img">
+          <figcaption>Figure 5</figcaption>
+        </figure>
+        <p>Master-Slave Modbus communication over serial RS-485 physical media using two-wire transmit and receive connections</p>
+        <figure class="img-container">
+          <img src="img/physical-media-3.jpg" alt="physical media 1" class="main-doc-img">
+          <figcaption>Figure 6</figcaption>
+        </figure>
+        <p>On simple interfaces like RS232 or RS485, the Modbus messages are sent in plain form over the network and the network will be dedicated to only Modbus communication. However, if your network requires multiple heterogeneous devices using a more versatile network system like TCP/IP over Ethernet, the Modbus messages are embedded in Ethernet packets with the format prescribed for this physical interface. So in this case, Modbus and other types of mixed protocols can co-exist at the same physical interface at the same time.</p>
+        <figure class="img-container">
+          <img src="img/physical-media-4.gif" alt="physical media 1" class="main-doc-img">
+          <figcaption>Figure 7</figcaption>
+        </figure>
+      </article>
+    </section>
+    <section class="main-section" id="Physical_Media">
+      <header>Modbus Message Structure</header>
+      <p>The main Modbus message structure is Peer-to-Peer. Modbus is able to function on both Point-to-Point and Multidrop networks.</p>
     </section>
     <footer>
       <div class="cardfooter">

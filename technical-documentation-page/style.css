@@ -79,9 +79,11 @@ figcaption {
 }
 
 .main-doc-img {
-  width: 40%;
+  width: 50%;
 }
-
+ul>li {
+  font-size: 1.25rem;
+}
 footer {
   margin-top: 3rem;
   font-size: 1.5rem;
