@@ -22,11 +22,7 @@
       <li><a href="#Types_of_Modbus_Protocol" class="nav-link">Types of Modbus Protocol</a></li>
       <li><a href="#Physical_Media" class="nav-link">Physical Media</a></li>
       <li><a href="#Modbus_Message_Structure" class="nav-link">Modbus Message Structure</a></li>
-      <!-- <li><a href="" class="nav-link"></a></li>
-      <li><a href="" class="nav-link"></a></li>
-      <li><a href="" class="nav-link"></a></li>
-      <li><a href="" class="nav-link"></a></li>
-      <li><a href="" class="nav-link"></a></li> -->
+      <li><a href="#EasyModbus_Library_(.Net)" class="nav-link">EasyModbus Library (.Net)</a></li>
     </ul>
   </nav>
   <main id="main-doc">
@@ -100,9 +96,82 @@
         </figure>
       </article>
     </section>
-    <section class="main-section" id="Physical_Media">
+    <section class="main-section" id="Modbus_Message_Structure">
       <header>Modbus Message Structure</header>
-      <p>The main Modbus message structure is Peer-to-Peer. Modbus is able to function on both Point-to-Point and Multidrop networks.</p>
+      <article>
+        <p>The main Modbus message structure is Peer-to-Peer. Modbus is able to function on both Point-to-Point and Multidrop networks.</p>
+        <figure class="img-container">
+          <img src="img/modbus-message-structure-1.jpg" alt="modbus message structure 1" class="main-doc-img">
+          <figcaption>Figure 8</figcaption>
+        </figure>
+        <p>Modbus devices communicate using a Master-Slave (Client-Server for Ethernet) technique in which only one device (the Master/Server) can initiate transactions (called queries). The other devices (Slaves/Clients) respond by supplying the requested data to the master, or by taking the action requested in the query. A slave is any peripheral device such as an I/O transducer, valve, network drive, or other measuring types of devices which processes information and sends its response message to the master using Modbus. Masters can address individual slaves or initiate a broadcast message to all slaves. Slaves return a response to all message queries addressed to them individually, but do not respond to broadcast messages. Slaves do not initiate messages on their own and only respond to message queries transmitted from the master.</p>
+        <figure class="img-container">
+          <img src="img/modbus-message-structure-2.gif" alt="modbus message structure 2" class="main-doc-img">
+          <figcaption>Figure 9</figcaption>
+        </figure>
+        <p>The master’s query will consist of:</p>
+        <ul>
+          <li>Slave address (broadcast address).</li>
+          <li>Function code with a read or write data command to the slave.</li>
+          <li>The write command “Data” if a write command was initiated by the master.</li>
+          <li>Error checking field.</li>
+        </ul>
+        <p>The error checking is a value the master or slave creates at the beginning of the transmission or response and then checked when the message is received to verify the contents are correct.</p>
+        <figure class="img-container">
+          <img src="img/modbus-message-structure-3.jpg" alt="modbus message structure 3" class="main-doc-img">
+          <figcaption>Figure 10</figcaption>
+        </figure>
+        <p>A slave’s response consists of:</p>
+        <ul>
+          <li>Fields confirming it received the request.</li>
+          <li>The data to be returned.</li>
+          <li>Error checking data.</li>
+        </ul>
+        <p>If no error occurs, the slave’s response contains the data as requested. If an error occurs in the message query received by the slave, or if the slave is unable to perform the action requested, the slave will return an exception message as its response.</p>
+        <figure class="img-container">
+          <img src="img/modbus-message-structure-4.gif" alt="modbus message structure 4" class="main-doc-img">
+          <figcaption>Figure 11</figcaption>
+        </figure>
+        <p>The error check field of the slave’s message frame allows the master to confirm that the contents of the message are valid.</p>
+        <figure class="img-container">
+          <img src="img/modbus-message-structure-5.jpg" alt="modbus message structure 5" class="main-doc-img">
+          <figcaption>Figure 12</figcaption>
+        </figure>
+      </article>
+    </section>
+    <section class="main-section" id="EasyModbus_Library_(.Net)">
+      <header>EasyModbus Library (.Net)</header>
+      <article>
+        <p>Fast and secure access from PC or Embedded Systems to many PLC-Systems and other components for industry automation. Only a few lines of codes are needed to read or write data from or to a PLC. The optional Modbus2Mqtt Bridge allows to publish values to a Mqtt-Broker. Additional Software tools e.g. Modbus Server Simulator, makes software development fast and easy.</p>
+        <p>Modbus TCP, Modbus UDP and Modbus RTU client/server library for .NET can be downloaded from: <a href="https://sourceforge.net/projects/easymodbustcp/" target="_blank">https://sourceforge.net/projects/easymodbustcp/</a></p>
+        <p>.NET: Modbus-RTU Master Simple Read and Write operations</p>
+        <code>
+          using System;
+          using EasyModbus;
+
+          namespace ModbusRS485Master {
+            class Program{
+              public static void Main(string[] args){
+                ModbusClient modbusClient = new ModbusClient("COM1");
+                modbusClient.Connect();
+                Console.WriteLine("Value of Discr. Input #1: "+modbusClient.ReadDiscreteInputs(0,1)[0].ToString());
+                Console.WriteLine("Value of Input Reg. #10: "+modbusClient.ReadInputRegisters(9,1)[0].ToString());
+
+                modbusClient.WriteSingleCoil(4,true);
+                modbusClient.WriteSingleRegister(19,4711);
+                Console.WriteLine("Value of Coil #5: "+modbusClient.ReadCoils(4,1)[0].ToString());
+                Console.WriteLine("Value of Holding Reg.. #20: "+modbusClient.ReadHoldingRegisters(19,1)[0].ToString());
+                modbusClient.WriteMultipleRegisters(49, new int[10] {1,2,3,4,5,6,7,8,9,10});
+                modbusClient.WriteMultipleCoils(29, new bool[10] {true,true,true,true,true,true,true,true,true,true,});
+                
+                Console.Write("Press any key to continue . . . ");
+                Console.ReadKey(true);
+              }
+            }
+          }
+
+        </code>
+      </article>
     </section>
     <footer>
       <div class="cardfooter">
