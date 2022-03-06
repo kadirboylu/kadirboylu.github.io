@@ -310,100 +310,146 @@
           </p>
           <p>.NET: Modbus-RTU Master Simple Read and Write operations</p>
           <code>
-            using System; using EasyModbus; namespace ModbusRS485Master { class
-            Program{ public static void Main(string[] args){ ModbusClient
-            modbusClient = new ModbusClient("COM1"); modbusClient.Connect();
-            Console.WriteLine("Value of Discr. Input #1:
-            "+modbusClient.ReadDiscreteInputs(0,1)[0].ToString());
-            Console.WriteLine("Value of Input Reg. #10:
-            "+modbusClient.ReadInputRegisters(9,1)[0].ToString());
+            using System;
+            using EasyModbus;
+             
+            namespace ModbusRS485Master
+            {
+            class Program
+            {
+            public static void Main(string[] args)
+            {
+            ModbusClient modbusClient = new ModbusClient("COM1");
+            modbusClient.Connect();
+                
+            Console.WriteLine("Value of Discr. Input #1: "+modbusClient.ReadDiscreteInputs(0,1)[0].ToString());
+            Console.WriteLine("Value of Input Reg. #10: "+modbusClient.ReadInputRegisters(9,1)[0].ToString());
+                  
             modbusClient.WriteSingleCoil(4,true);
-            modbusClient.WriteSingleRegister(19,4711); Console.WriteLine("Value
-            of Coil #5: "+modbusClient.ReadCoils(4,1)[0].ToString());
-            Console.WriteLine("Value of Holding Reg.. #20: "+modbusClient.
-            ReadHoldingRegisters(19,1)[0].ToString());
-            modbusClient.WriteMultipleRegisters(49, new int[10]
-            {1,2,3,4,5,6,7,8,9,10}); modbusClient.WriteMultipleCoils(29, new
-            bool[10] {true,true,true,true,true,true,true,true,true,true,});
+            modbusClient.WriteSingleRegister(19,4711);
+                  
+            Console.WriteLine("Value of Coil #5: "+modbusClient.ReadCoils(4,1)[0].ToString());
+            Console.WriteLine("Value of Holding Reg.. #20: "+modbusClient.ReadHoldingRegisters(19,1)[0].ToString());
+            modbusClient.WriteMultipleRegisters(49, new int[10] {1,2,3,4,5,6,7,8,9,10});
+            modbusClient.WriteMultipleCoils(29, new bool[10] {true,true,true,true,true,true,true,true,true,true,});
+                  
             Console.Write("Press any key to continue . . . ");
-            Console.ReadKey(true); } } }
+            Console.ReadKey(true);
+            }
+            }
+            }
           </code>
           <p>.NET: Modbus-TCP Client Simple Read and Write operations</p>
           <code>
-            namespace ModbusClientApplication { class Program { public static
-            void Main(string[] args) { ModbusClient modbusClient = new
-            ModbusClient("190.201.100.100", 502); modbusClient.Connect();
-            modbusClient.WriteMultipleCoils(4, new bool[] {true, true, true,
-            true, true, true, true, true, true, true}); bool[] readCoils =
-            modbusClient.ReadCoils(9,10); int[] readHoldingRegisters =
-            modbusClient.ReadHoldingRegisters(0,10); for (int i = 0; i <
-            readCoils.Length; i++) Console.WriteLine("Value of Coil " + (9 + i +
-            1) + " " + readCoils[i].ToString()); for (int i = 0; i <
-            readHoldingRegisters.Length; i++) Console.WriteLine("Value of
-            HoldingRegister " + (i + 1) + " "+
-            readHoldingRegisters[i].ToString()); modbusClient.Disconnect();
+            namespace ModbusClientApplication
+            {
+            class Program
+            {
+            public static void Main(string[] args)
+            {
+            ModbusClient modbusClient = new ModbusClient("190.201.100.100", 502);
+            modbusClient.Connect();
+            modbusClient.WriteMultipleCoils(4, new bool[] {true, true, true, true, true, true, true, true, true, true});
+            bool[] readCoils = modbusClient.ReadCoils(9,10);
+            int[] readHoldingRegisters = modbusClient.ReadHoldingRegisters(0,10);
+            
+            for (int i = 0; i < readCoils.Length; i++)
+            Console.WriteLine("Value of Coil " + (9 + i + 1) + " " + readCoils[i].ToString());
+                                    
+            for (int i = 0; i < readHoldingRegisters.Length; i++)
+            Console.WriteLine("Value of HoldingRegister " + (i + 1) + " "+ readHoldingRegisters[i].ToString());
+                     
+            modbusClient.Disconnect();
             Console.Write("Press any key to continue . . . ");
-            Console.ReadKey(true); } } }
+            Console.ReadKey(true);
+            }
+            }
+            }
           </code>
           <p>
             Read Values from Modus-Server and Publish the Values to a
             MQTT-Broker
           </p>
           <code>
-            class Program { static void Main(string[] args) {
-            EasyModbus.ModbusClient modbusClient = new
-            EasyModbus.ModbusClient("127.0.0.1", 502);
-            modbusClient.ConnectionTimeout = 5000; modbusClient.LogFileFilename
-            = "test.txt"; modbusClient.MqttRetainMessages = true;
-            modbusClient.Connect(); while (true) { int[] holdingRegister =
-            modbusClient.ReadHoldingRegisters(60, 2, "www.mqtt-dashboard.com");
-            System.Threading.Thread.Sleep(1000); } modbusClient.Disconnect();
-            Console.ReadKey(); } }
+            class Program
+            {
+            static void Main(string[] args)
+            {
+            EasyModbus.ModbusClient modbusClient = new EasyModbus.ModbusClient("127.0.0.1", 502);
+            modbusClient.ConnectionTimeout = 5000;
+            modbusClient.LogFileFilename = "test.txt";
+            
+            modbusClient.MqttRetainMessages = true;
+            modbusClient.Connect();
+            
+            while (true)
+            {
+            int[] holdingRegister = modbusClient.ReadHoldingRegisters(60, 2, "www.mqtt-dashboard.com");
+            System.Threading.Thread.Sleep(1000);
+            }
+            
+            modbusClient.Disconnect();
+            Console.ReadKey();
+            }
+            }
           </code>
           <p>
             Automatically poll values from a Modbus-Server and Publish them to a
             MQTT-Broker – The Topic are changed
           </p>
           <code>
-            static void Main(string[] args) { EasyModbus.EasyModbus2Mqtt
-            easyModbus2Mqtt= new EasyModbus.EasyModbus2Mqtt();
-            //easyModbus2Mqtt.AutomaticReconnect = false;
-            easyModbus2Mqtt.MqttUserName = "sr555"; easyModbus2Mqtt.MqttPassword
-            = "******************"; easyModbus2Mqtt.MqttBrokerPort = 18972;
-            //easyModbus2Mqtt.MqttBrokerAddress = "broker.hivemq.com";
-            //easyModbus2Mqtt.MqttBrokerAddress = "192.168.178.101";
+            static void Main(string[] args)
+            {
+            EasyModbus.EasyModbus2Mqtt easyModbus2Mqtt= new EasyModbus.EasyModbus2Mqtt();
+            easyModbus2Mqtt.MqttUserName = "sr555";
+            easyModbus2Mqtt.MqttPassword = "******************";
+            easyModbus2Mqtt.MqttBrokerPort = 18972;
             easyModbus2Mqtt.MqttBrokerAddress = "m21.cloudmqtt.com";
             easyModbus2Mqtt.ModbusIPAddress = "127.0.0.1";
-            easyModbus2Mqtt.AddReadOrder(EasyModbus.FunctionCode.ReadCoils, 2,
-            0, 200, new string[] { "easymodbusclient/customtopic1",
-            "easymodbusclient/customtopic2" });
-            easyModbus2Mqtt.AddReadOrder(EasyModbus.FunctionCode.ReadInputRegisters,
-            2, 0, 200); EasyModbus.ReadOrder readOrder = new
-            EasyModbus.ReadOrder(); readOrder.Hysteresis = new int[10] { 10, 10,
-            10, 10, 10, 10, 10, 10, 10, 10 }; readOrder.Unit = new string[10]
-            {"°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C"};
-            readOrder.Scale = new float[10] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f,
-            0.1f, 0.1f, 0.1f, 0.1f, 0.1f }; readOrder.Quantity = 10;
-            readOrder.StartingAddress = 10; readOrder.FunctionCode =
-            EasyModbus.FunctionCode.ReadHoldingRegisters;
-            easyModbus2Mqtt.AddReadOrder(readOrder); easyModbus2Mqtt.start(); }
+            easyModbus2Mqtt.AddReadOrder(EasyModbus.FunctionCode.ReadCoils, 2, 0, 200, new string[] {"easymodbusclient/customtopic1", "easymodbusclient/customtopic2" });
+            easyModbus2Mqtt.AddReadOrder(EasyModbus.FunctionCode.ReadInputRegisters, 2, 0, 200);
+            EasyModbus.ReadOrder readOrder = new EasyModbus.ReadOrder();
+            readOrder.Hysteresis = new int[10] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+            readOrder.Unit = new string[10] {"°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C"};
+            readOrder.Scale = new float[10] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f };
+            readOrder.Quantity = 10;
+            readOrder.StartingAddress = 10;
+            readOrder.FunctionCode = EasyModbus.FunctionCode.ReadHoldingRegisters;          
+            easyModbus2Mqtt.AddReadOrder(readOrder);
+            easyModbus2Mqtt.start();
+            }
           </code>
           <p>
             Modbus-TCP Server which publishes the values on change to a
             MQTT-Broker
           </p>
           <code>
-            class Program { static void Main(string[] args) { Program
-            application = new Program(); application.startServer(); } public
-            void startServer() { EasyModbus.ModbusServer modbusServer = new
-            EasyModbus.ModbusServer(); modbusServer.MqttRootTopic =
-            "examplemodbusserver"; modbusServer.MqttBrokerAddress =
-            "www.mqtt-dashboard.com"; modbusServer.Listen();
-            modbusServer.holdingRegistersChanged += new
-            EasyModbus.ModbusServer.HoldingRegistersChanged(holdingRegistersChanged);
-            Console.ReadKey(); modbusServer.StopListening(); } public void
-            holdingRegistersChanged(int startingAddress, int quantity) {
-            Console.WriteLine(startingAddress); Console.WriteLine(quantity); } }
+            class Program
+            {
+            static void Main(string[] args)
+            {
+            Program application = new Program();
+            application.startServer();
+            }
+            
+            public void startServer()
+            {
+            EasyModbus.ModbusServer modbusServer = new EasyModbus.ModbusServer();
+            modbusServer.MqttRootTopic = "examplemodbusserver";
+            modbusServer.MqttBrokerAddress = "www.mqtt-dashboard.com";
+            modbusServer.Listen();
+            modbusServer.holdingRegistersChanged += new EasyModbus.ModbusServer.HoldingRegistersChanged(holdingRegistersChanged);
+            Console.ReadKey();
+                        
+            modbusServer.StopListening();
+            }
+            
+            public void holdingRegistersChanged(int startingAddress, int quantity)
+            {
+            Console.WriteLine(startingAddress);
+            Console.WriteLine(quantity);
+            }
+            }
           </code>
         </article>
       </section>
