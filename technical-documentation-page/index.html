@@ -1,309 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
-    src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
-    async
+      src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
+      async
     ></script>
-    <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Modbus Protocol</title>
-</head>
-<body>
-  <nav id="navbar">
-    <header>Modbus Documentation</header>
-    <ul>
-      <li><a href="#What_is_Modbus?" class="nav-link">What is Modbus?</a></li>
-      <li><a href="#Types_of_Modbus_Protocol" class="nav-link">Types of Modbus Protocol</a></li>
-      <li><a href="#Physical_Media" class="nav-link">Physical Media</a></li>
-      <li><a href="#Modbus_Message_Structure" class="nav-link">Modbus Message Structure</a></li>
-      <li><a href="#EasyModbus_Library_(.Net)" class="nav-link">EasyModbus Library (.Net)</a></li>
-    </ul>
-  </nav>
-  <main id="main-doc">
-    <section class="main-section" id="What_is_Modbus?">
-      <header>What is Modbus?</header>
-      <article>
-        <p>The Modbus communication protocol is the oldest and by far the most popular automation protocol in the field of process automation and SCADA (Supervisory Control and Data Acquisition).</p>
-        <figure class="img-container">
-          <img src="img/what-is-modbus.jpg" alt="What is Modbus?" class="main-doc-img">
-          <figcaption>Figure 1</figcaption>
-        </figure>
-        <p>Knowing how to create Modbus based networks is essential for any electrical technician and engineer working in these occupation fields. Being able to integrate devices from different manufacturers is a skill that is in demand and will ultimately make you more valuable and marketable in the industry. Modbus is a communications protocol published by Modicon in 1979 for use with its Programmable Logic Controllers (PLCs). Modicon is now owned by Schneider Electric. Modbus provides a common language for devices and equipment to communicate with one and another. For example, Modbus enables devices on a system that measures temperature and humidity connected on the same network to communicate the results to a supervisory computer or PLC.</p>
-        <figure class="img-container">
-          <img src="img/what-is-modbus-2.jpg" alt="what-is-modbus-2" class="main-doc-img">
-          <figcaption>Figure 2</figcaption>
-        </figure>
-        <p>The development and update of Modbus protocols have been managed by the Modbus Organization. The Modbus Organization is an association of users and suppliers of Modbus-compliant devices.</p>
-      </article>
-    </section>
-    <section class="main-section" id="Types_of_Modbus_Protocol">
-      <header>Types Of Modbus Protocol</header>
-      <article>
-        <p>Several versions of the Modbus protocol exist for the serial port and Ethernet and the most common are:</p>
-        <ul>
-          <li>Modbus RTU</li>
-          <li>Modbus ASCII</li>
-          <li>Modbus TCP</li>
-          <li>Modbus Plus</li>
-        </ul>
-        <figure class="img-container">
-          <img src="img/types-of-modbus-protocol-1.jpg" alt="types-of-modbus-protocol-1" class="main-doc-img">
-          <figcaption>Figure 3</figcaption>
-        </figure>
-        <p>Modicon published the Modbus communication interface for a multidrop network based on a Master-Slave architecture. Communication between the Modbus nodes is achieved with send request and read response type messages.</p>
-      </article>
-    </section>
-    <section class="main-section" id="Physical_Media">
-      <header>Physical Media</header>
-      <article>
-        <p>Modbus is an open standard that describes the messaging communication dialog.</p>
-        <p>Modbus communicates over several types of physical media such as:</p>
-        <ul>
-          <li>Serial RS-232</li>
-          <li>Serial RS-485</li>
-          <li>Serial RS-422</li>
-          <li>Ethernet</li>
-        </ul>
-        <figure class="img-container">
-          <img src="img/physical-media-1.gif" alt="physical media 1" class="main-doc-img">
-          <figcaption>Figure 4</figcaption>
-        </figure>
-        <p>The original Modbus interface ran on RS-232 serial communication, but most of the later Modbus implementations use RS-485 because it allowed:</p>
-        <ul>
-          <li>Longer distances.</li>
-          <li>Higher speeds.</li>
-          <li>The possibility of multiple devices on a single multi-drop network.</li>
-        </ul>
-        <figure class="img-container">
-          <img src="img/physical-media-2.jpg" alt="physical media 2" class="main-doc-img">
-          <figcaption>Figure 5</figcaption>
-        </figure>
-        <p>Master-Slave Modbus communication over serial RS-485 physical media using two-wire transmit and receive connections</p>
-        <figure class="img-container">
-          <img src="img/physical-media-3.jpg" alt="physical media 1" class="main-doc-img">
-          <figcaption>Figure 6</figcaption>
-        </figure>
-        <p>On simple interfaces like RS232 or RS485, the Modbus messages are sent in plain form over the network and the network will be dedicated to only Modbus communication. However, if your network requires multiple heterogeneous devices using a more versatile network system like TCP/IP over Ethernet, the Modbus messages are embedded in Ethernet packets with the format prescribed for this physical interface. So in this case, Modbus and other types of mixed protocols can co-exist at the same physical interface at the same time.</p>
-        <figure class="img-container">
-          <img src="img/physical-media-4.gif" alt="physical media 1" class="main-doc-img">
-          <figcaption>Figure 7</figcaption>
-        </figure>
-      </article>
-    </section>
-    <section class="main-section" id="Modbus_Message_Structure">
-      <header>Modbus Message Structure</header>
-      <article>
-        <p>The main Modbus message structure is Peer-to-Peer. Modbus is able to function on both Point-to-Point and Multidrop networks.</p>
-        <figure class="img-container">
-          <img src="img/modbus-message-structure-1.jpg" alt="modbus message structure 1" class="main-doc-img">
-          <figcaption>Figure 8</figcaption>
-        </figure>
-        <p>Modbus devices communicate using a Master-Slave (Client-Server for Ethernet) technique in which only one device (the Master/Server) can initiate transactions (called queries). The other devices (Slaves/Clients) respond by supplying the requested data to the master, or by taking the action requested in the query. A slave is any peripheral device such as an I/O transducer, valve, network drive, or other measuring types of devices which processes information and sends its response message to the master using Modbus. Masters can address individual slaves or initiate a broadcast message to all slaves. Slaves return a response to all message queries addressed to them individually, but do not respond to broadcast messages. Slaves do not initiate messages on their own and only respond to message queries transmitted from the master.</p>
-        <figure class="img-container">
-          <img src="img/modbus-message-structure-2.gif" alt="modbus message structure 2" class="main-doc-img">
-          <figcaption>Figure 9</figcaption>
-        </figure>
-        <p>The master’s query will consist of:</p>
-        <ul>
-          <li>Slave address (broadcast address).</li>
-          <li>Function code with a read or write data command to the slave.</li>
-          <li>The write command “Data” if a write command was initiated by the master.</li>
-          <li>Error checking field.</li>
-        </ul>
-        <p>The error checking is a value the master or slave creates at the beginning of the transmission or response and then checked when the message is received to verify the contents are correct.</p>
-        <figure class="img-container">
-          <img src="img/modbus-message-structure-3.jpg" alt="modbus message structure 3" class="main-doc-img">
-          <figcaption>Figure 10</figcaption>
-        </figure>
-        <p>A slave’s response consists of:</p>
-        <ul>
-          <li>Fields confirming it received the request.</li>
-          <li>The data to be returned.</li>
-          <li>Error checking data.</li>
-        </ul>
-        <p>If no error occurs, the slave’s response contains the data as requested. If an error occurs in the message query received by the slave, or if the slave is unable to perform the action requested, the slave will return an exception message as its response.</p>
-        <figure class="img-container">
-          <img src="img/modbus-message-structure-4.gif" alt="modbus message structure 4" class="main-doc-img">
-          <figcaption>Figure 11</figcaption>
-        </figure>
-        <p>The error check field of the slave’s message frame allows the master to confirm that the contents of the message are valid.</p>
-        <figure class="img-container">
-          <img src="img/modbus-message-structure-5.jpg" alt="modbus message structure 5" class="main-doc-img">
-          <figcaption>Figure 12</figcaption>
-        </figure>
-      </article>
-    </section>
-    <section class="main-section" id="EasyModbus_Library_(.Net)">
-      <header>EasyModbus Library (.Net)</header>
-      <article>
-        <p>Fast and secure access from PC or Embedded Systems to many PLC-Systems and other components for industry automation. Only a few lines of codes are needed to read or write data from or to a PLC. The optional Modbus2Mqtt Bridge allows to publish values to a Mqtt-Broker. Additional Software tools e.g. Modbus Server Simulator, makes software development fast and easy.</p>
-        <p>Modbus TCP, Modbus UDP and Modbus RTU client/server library for .NET can be downloaded from: <a href="https://sourceforge.net/projects/easymodbustcp/" target="_blank">https://sourceforge.net/projects/easymodbustcp/</a></p>
-        <p>.NET: Modbus-RTU Master Simple Read and Write operations</p>
-        <code>
-          using System;
-          using EasyModbus;
-
-          namespace ModbusRS485Master {
-            
-          class Program{
-            
-          public static void Main(string[] args){
-            
-          ModbusClient modbusClient = new ModbusClient("COM1");
-          modbusClient.Connect();
-            
-          Console.WriteLine("Value of Discr. Input #1: "+modbusClient.ReadDiscreteInputs(0,1)[0].ToString());
-          Console.WriteLine("Value of Input Reg. #10: "+modbusClient.ReadInputRegisters(9,1)[0].ToString());
-
-          modbusClient.WriteSingleCoil(4,true);
-          modbusClient.WriteSingleRegister(19,4711);
-            
-          Console.WriteLine("Value of Coil #5: "+modbusClient.ReadCoils(4,1)[0].ToString());
-          Console.WriteLine("Value of Holding Reg.. #20: "+modbusClient.
-                
-          ReadHoldingRegisters(19,1)[0].ToString());
-          modbusClient.WriteMultipleRegisters(49, new int[10] {1,2,3,4,5,6,7,8,9,10});
-          modbusClient.WriteMultipleCoils(29, new bool[10] {true,true,true,true,true,true,true,true,true,true,});
-                
-          Console.Write("Press any key to continue . . . ");
-          Console.ReadKey(true);
-          }
-          }
-          }
-        </code>
-        <p>.NET: Modbus-TCP  Client Simple Read and Write operations</p>
-        <code>
-          namespace ModbusClientApplication
-          {
-
-          class Program
-          {
-
-          public static void Main(string[] args)
-          {
-          ModbusClient modbusClient = new ModbusClient("190.201.100.100", 502);
-          modbusClient.Connect();
-
-          modbusClient.WriteMultipleCoils(4, new bool[] {true, true, true, true, true, true, true, true, true, true});
-
-          bool[] readCoils = modbusClient.ReadCoils(9,10);
-          int[] readHoldingRegisters = modbusClient.ReadHoldingRegisters(0,10);
-
-          for (int i = 0; i < readCoils.Length; i++)
-            Console.WriteLine("Value of Coil " + (9 + i + 1) + " " + readCoils[i].ToString());
-                                  
-          for (int i = 0; i < readHoldingRegisters.Length; i++)
-            Console.WriteLine("Value of HoldingRegister " + (i + 1) + " "+ readHoldingRegisters[i].ToString());            
-
-          modbusClient.Disconnect();
-
-          Console.Write("Press any key to continue . . . ");
-          Console.ReadKey(true);
-          }
-          }
-          }
-        </code>
-        <p>Read Values from Modus-Server and Publish the Values to a MQTT-Broker</p>
-        <code>
-          class Program
-          {
-          static void Main(string[] args)
-          {
-          EasyModbus.ModbusClient modbusClient = new EasyModbus.ModbusClient("127.0.0.1", 502);
-          modbusClient.ConnectionTimeout = 5000;
-          modbusClient.LogFileFilename = "test.txt";
-          modbusClient.MqttRetainMessages = true;
-          modbusClient.Connect();
-          while (true)
-          {
-          int[] holdingRegister = modbusClient.ReadHoldingRegisters(60, 2, "www.mqtt-dashboard.com");
-          System.Threading.Thread.Sleep(1000);
-          }
-          modbusClient.Disconnect();
-          Console.ReadKey();
-          }
-          }
-        </code>
-        <p>Automatically poll values from a Modbus-Server and Publish them to a MQTT-Broker – The Topic are changed</p>
-        <code>
-          static void Main(string[] args)
-          {
-            EasyModbus.EasyModbus2Mqtt easyModbus2Mqtt= new EasyModbus.EasyModbus2Mqtt();
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Modbus Documentation</header>
+      <ul>
+        <li><a href="#What_is_Modbus?" class="nav-link">What is Modbus?</a></li>
+        <li>
+          <a href="#Types_of_Modbus_Protocol" class="nav-link"
+            >Types of Modbus Protocol</a
+          >
+        </li>
+        <li><a href="#Physical_Media" class="nav-link">Physical Media</a></li>
+        <li>
+          <a href="#Modbus_Message_Structure" class="nav-link"
+            >Modbus Message Structure</a
+          >
+        </li>
+        <li>
+          <a href="#EasyModbus_Library_(.Net)" class="nav-link"
+            >EasyModbus Library (.Net)</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="What_is_Modbus?">
+        <header>What is Modbus?</header>
+        <article>
+          <p>
+            The Modbus communication protocol is the oldest and by far the most
+            popular automation protocol in the field of process automation and
+            SCADA (Supervisory Control and Data Acquisition).
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/what-is-modbus.jpg"
+              alt="What is Modbus?"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 1</figcaption>
+          </figure>
+          <p>
+            Knowing how to create Modbus based networks is essential for any
+            electrical technician and engineer working in these occupation
+            fields. Being able to integrate devices from different manufacturers
+            is a skill that is in demand and will ultimately make you more
+            valuable and marketable in the industry. Modbus is a communications
+            protocol published by Modicon in 1979 for use with its Programmable
+            Logic Controllers (PLCs). Modicon is now owned by Schneider
+            Electric. Modbus provides a common language for devices and
+            equipment to communicate with one and another. For example, Modbus
+            enables devices on a system that measures temperature and humidity
+            connected on the same network to communicate the results to a
+            supervisory computer or PLC.
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/what-is-modbus-2.jpg"
+              alt="what-is-modbus-2"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 2</figcaption>
+          </figure>
+          <p>
+            The development and update of Modbus protocols have been managed by
+            the Modbus Organization. The Modbus Organization is an association
+            of users and suppliers of Modbus-compliant devices.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Types_of_Modbus_Protocol">
+        <header>Types Of Modbus Protocol</header>
+        <article>
+          <p>
+            Several versions of the Modbus protocol exist for the serial port
+            and Ethernet and the most common are:
+          </p>
+          <ul>
+            <li>Modbus RTU</li>
+            <li>Modbus ASCII</li>
+            <li>Modbus TCP</li>
+            <li>Modbus Plus</li>
+          </ul>
+          <figure class="img-container">
+            <img
+              src="img/types-of-modbus-protocol-1.jpg"
+              alt="types-of-modbus-protocol-1"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 3</figcaption>
+          </figure>
+          <p>
+            Modicon published the Modbus communication interface for a multidrop
+            network based on a Master-Slave architecture. Communication between
+            the Modbus nodes is achieved with send request and read response
+            type messages.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Physical_Media">
+        <header>Physical Media</header>
+        <article>
+          <p>
+            Modbus is an open standard that describes the messaging
+            communication dialog.
+          </p>
+          <p>
+            Modbus communicates over several types of physical media such as:
+          </p>
+          <ul>
+            <li>Serial RS-232</li>
+            <li>Serial RS-485</li>
+            <li>Serial RS-422</li>
+            <li>Ethernet</li>
+          </ul>
+          <figure class="img-container">
+            <img
+              src="img/physical-media-1.gif"
+              alt="physical media 1"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 4</figcaption>
+          </figure>
+          <p>
+            The original Modbus interface ran on RS-232 serial communication,
+            but most of the later Modbus implementations use RS-485 because it
+            allowed:
+          </p>
+          <ul>
+            <li>Longer distances.</li>
+            <li>Higher speeds.</li>
+            <li>
+              The possibility of multiple devices on a single multi-drop
+              network.
+            </li>
+          </ul>
+          <figure class="img-container">
+            <img
+              src="img/physical-media-2.jpg"
+              alt="physical media 2"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 5</figcaption>
+          </figure>
+          <p>
+            Master-Slave Modbus communication over serial RS-485 physical media
+            using two-wire transmit and receive connections
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/physical-media-3.jpg"
+              alt="physical media 1"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 6</figcaption>
+          </figure>
+          <p>
+            On simple interfaces like RS232 or RS485, the Modbus messages are
+            sent in plain form over the network and the network will be
+            dedicated to only Modbus communication. However, if your network
+            requires multiple heterogeneous devices using a more versatile
+            network system like TCP/IP over Ethernet, the Modbus messages are
+            embedded in Ethernet packets with the format prescribed for this
+            physical interface. So in this case, Modbus and other types of mixed
+            protocols can co-exist at the same physical interface at the same
+            time.
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/physical-media-4.gif"
+              alt="physical media 1"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 7</figcaption>
+          </figure>
+        </article>
+      </section>
+      <section class="main-section" id="Modbus_Message_Structure">
+        <header>Modbus Message Structure</header>
+        <article>
+          <p>
+            The main Modbus message structure is Peer-to-Peer. Modbus is able to
+            function on both Point-to-Point and Multidrop networks.
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/modbus-message-structure-1.jpg"
+              alt="modbus message structure 1"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 8</figcaption>
+          </figure>
+          <p>
+            Modbus devices communicate using a Master-Slave (Client-Server for
+            Ethernet) technique in which only one device (the Master/Server) can
+            initiate transactions (called queries). The other devices
+            (Slaves/Clients) respond by supplying the requested data to the
+            master, or by taking the action requested in the query. A slave is
+            any peripheral device such as an I/O transducer, valve, network
+            drive, or other measuring types of devices which processes
+            information and sends its response message to the master using
+            Modbus. Masters can address individual slaves or initiate a
+            broadcast message to all slaves. Slaves return a response to all
+            message queries addressed to them individually, but do not respond
+            to broadcast messages. Slaves do not initiate messages on their own
+            and only respond to message queries transmitted from the master.
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/modbus-message-structure-2.gif"
+              alt="modbus message structure 2"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 9</figcaption>
+          </figure>
+          <p>The master’s query will consist of:</p>
+          <ul>
+            <li>Slave address (broadcast address).</li>
+            <li>
+              Function code with a read or write data command to the slave.
+            </li>
+            <li>
+              The write command “Data” if a write command was initiated by the
+              master.
+            </li>
+            <li>Error checking field.</li>
+          </ul>
+          <p>
+            The error checking is a value the master or slave creates at the
+            beginning of the transmission or response and then checked when the
+            message is received to verify the contents are correct.
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/modbus-message-structure-3.jpg"
+              alt="modbus message structure 3"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 10</figcaption>
+          </figure>
+          <p>A slave’s response consists of:</p>
+          <ul>
+            <li>Fields confirming it received the request.</li>
+            <li>The data to be returned.</li>
+            <li>Error checking data.</li>
+          </ul>
+          <p>
+            If no error occurs, the slave’s response contains the data as
+            requested. If an error occurs in the message query received by the
+            slave, or if the slave is unable to perform the action requested,
+            the slave will return an exception message as its response.
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/modbus-message-structure-4.gif"
+              alt="modbus message structure 4"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 11</figcaption>
+          </figure>
+          <p>
+            The error check field of the slave’s message frame allows the master
+            to confirm that the contents of the message are valid.
+          </p>
+          <figure class="img-container">
+            <img
+              src="img/modbus-message-structure-5.jpg"
+              alt="modbus message structure 5"
+              class="main-doc-img"
+            />
+            <figcaption>Figure 12</figcaption>
+          </figure>
+        </article>
+      </section>
+      <section class="main-section" id="EasyModbus_Library_(.Net)">
+        <header>EasyModbus Library (.Net)</header>
+        <article>
+          <p>
+            Fast and secure access from PC or Embedded Systems to many
+            PLC-Systems and other components for industry automation. Only a few
+            lines of codes are needed to read or write data from or to a PLC.
+            The optional Modbus2Mqtt Bridge allows to publish values to a
+            Mqtt-Broker. Additional Software tools e.g. Modbus Server Simulator,
+            makes software development fast and easy.
+          </p>
+          <p>
+            Modbus TCP, Modbus UDP and Modbus RTU client/server library for .NET
+            can be downloaded from:
+            <a
+              href="https://sourceforge.net/projects/easymodbustcp/"
+              target="_blank"
+              >https://sourceforge.net/projects/easymodbustcp/</a
+            >
+          </p>
+          <p>.NET: Modbus-RTU Master Simple Read and Write operations</p>
+          <code>
+            using System; using EasyModbus; namespace ModbusRS485Master { class
+            Program{ public static void Main(string[] args){ ModbusClient
+            modbusClient = new ModbusClient("COM1"); modbusClient.Connect();
+            Console.WriteLine("Value of Discr. Input #1:
+            "+modbusClient.ReadDiscreteInputs(0,1)[0].ToString());
+            Console.WriteLine("Value of Input Reg. #10:
+            "+modbusClient.ReadInputRegisters(9,1)[0].ToString());
+            modbusClient.WriteSingleCoil(4,true);
+            modbusClient.WriteSingleRegister(19,4711); Console.WriteLine("Value
+            of Coil #5: "+modbusClient.ReadCoils(4,1)[0].ToString());
+            Console.WriteLine("Value of Holding Reg.. #20: "+modbusClient.
+            ReadHoldingRegisters(19,1)[0].ToString());
+            modbusClient.WriteMultipleRegisters(49, new int[10]
+            {1,2,3,4,5,6,7,8,9,10}); modbusClient.WriteMultipleCoils(29, new
+            bool[10] {true,true,true,true,true,true,true,true,true,true,});
+            Console.Write("Press any key to continue . . . ");
+            Console.ReadKey(true); } } }
+          </code>
+          <p>.NET: Modbus-TCP Client Simple Read and Write operations</p>
+          <code>
+            namespace ModbusClientApplication { class Program { public static
+            void Main(string[] args) { ModbusClient modbusClient = new
+            ModbusClient("190.201.100.100", 502); modbusClient.Connect();
+            modbusClient.WriteMultipleCoils(4, new bool[] {true, true, true,
+            true, true, true, true, true, true, true}); bool[] readCoils =
+            modbusClient.ReadCoils(9,10); int[] readHoldingRegisters =
+            modbusClient.ReadHoldingRegisters(0,10); for (int i = 0; i <
+            readCoils.Length; i++) Console.WriteLine("Value of Coil " + (9 + i +
+            1) + " " + readCoils[i].ToString()); for (int i = 0; i <
+            readHoldingRegisters.Length; i++) Console.WriteLine("Value of
+            HoldingRegister " + (i + 1) + " "+
+            readHoldingRegisters[i].ToString()); modbusClient.Disconnect();
+            Console.Write("Press any key to continue . . . ");
+            Console.ReadKey(true); } } }
+          </code>
+          <p>
+            Read Values from Modus-Server and Publish the Values to a
+            MQTT-Broker
+          </p>
+          <code>
+            class Program { static void Main(string[] args) {
+            EasyModbus.ModbusClient modbusClient = new
+            EasyModbus.ModbusClient("127.0.0.1", 502);
+            modbusClient.ConnectionTimeout = 5000; modbusClient.LogFileFilename
+            = "test.txt"; modbusClient.MqttRetainMessages = true;
+            modbusClient.Connect(); while (true) { int[] holdingRegister =
+            modbusClient.ReadHoldingRegisters(60, 2, "www.mqtt-dashboard.com");
+            System.Threading.Thread.Sleep(1000); } modbusClient.Disconnect();
+            Console.ReadKey(); } }
+          </code>
+          <p>
+            Automatically poll values from a Modbus-Server and Publish them to a
+            MQTT-Broker – The Topic are changed
+          </p>
+          <code>
+            static void Main(string[] args) { EasyModbus.EasyModbus2Mqtt
+            easyModbus2Mqtt= new EasyModbus.EasyModbus2Mqtt();
             //easyModbus2Mqtt.AutomaticReconnect = false;
-            easyModbus2Mqtt.MqttUserName = "sr555";
-            easyModbus2Mqtt.MqttPassword = "******************";
-            easyModbus2Mqtt.MqttBrokerPort = 18972;
+            easyModbus2Mqtt.MqttUserName = "sr555"; easyModbus2Mqtt.MqttPassword
+            = "******************"; easyModbus2Mqtt.MqttBrokerPort = 18972;
             //easyModbus2Mqtt.MqttBrokerAddress = "broker.hivemq.com";
             //easyModbus2Mqtt.MqttBrokerAddress = "192.168.178.101";
             easyModbus2Mqtt.MqttBrokerAddress = "m21.cloudmqtt.com";
             easyModbus2Mqtt.ModbusIPAddress = "127.0.0.1";
-            easyModbus2Mqtt.AddReadOrder(EasyModbus.FunctionCode.ReadCoils, 2, 0, 200, new string[] { "easymodbusclient/customtopic1", "easymodbusclient/customtopic2" });
-            easyModbus2Mqtt.AddReadOrder(EasyModbus.FunctionCode.ReadInputRegisters, 2, 0, 200);
-            EasyModbus.ReadOrder readOrder = new EasyModbus.ReadOrder();
-            readOrder.Hysteresis = new int[10] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
-            readOrder.Unit = new string[10] {"°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C"};
-            readOrder.Scale = new float[10] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f };
-            readOrder.Quantity = 10;
-            readOrder.StartingAddress = 10;
-            readOrder.FunctionCode = EasyModbus.FunctionCode.ReadHoldingRegisters;          
-            easyModbus2Mqtt.AddReadOrder(readOrder);
-            easyModbus2Mqtt.start();
-          }
-        </code>
-        <p>Modbus-TCP Server which publishes the values on change to a MQTT-Broker</p>
-        <code>
-          class Program
-          {
-          static void Main(string[] args)
-          {
-          Program application = new Program();
-          application.startServer();
-          }
-          
-          public void startServer()
-          {
-          EasyModbus.ModbusServer modbusServer = new EasyModbus.ModbusServer();
-          modbusServer.MqttRootTopic = "examplemodbusserver";
-          modbusServer.MqttBrokerAddress = "www.mqtt-dashboard.com";
-          modbusServer.Listen();
-          modbusServer.holdingRegistersChanged += new EasyModbus.ModbusServer.HoldingRegistersChanged(holdingRegistersChanged);
-          Console.ReadKey();
-                    
-          modbusServer.StopListening();
-          }
-          
-          public void holdingRegistersChanged(int startingAddress, int quantity)
-          {
-          Console.WriteLine(startingAddress);
-          Console.WriteLine(quantity);
-          }
-          }
-        </code>
-      </article>
-    </section>
-    <footer>
-      <div class="cardfooter">
-        <a href="https://github.com/kadirboylu" target="_blank" class="fa fa-github"></a>
-      </div>
-      <div class="cardfooter">
-        <a href="https://www.linkedin.com/in/kadirboylu/" target="_blank" class="fa fa-linkedin"></a>
-      </div>
-      <div class="cardfooter">
-        <a href="https://www.youtube.com/channel/UCqKest-nnHQC7-shMEhDjQA" target="_blank" class="fa fa-youtube"></a>
-      </div>
-      <div class="cardfooter">
-        <a href="https://www.instagram.com/kadrboylu/" target="_blank" class="fa fa-instagram"></a>
-      </div>
-      <div class="cardfooter">
-        <a href="https://twitter.com/kadirboylu_" target="_blank" class="fa fa-twitter"></a>
-      </div>
-    </footer>
-  </main>
-</body>
+            easyModbus2Mqtt.AddReadOrder(EasyModbus.FunctionCode.ReadCoils, 2,
+            0, 200, new string[] { "easymodbusclient/customtopic1",
+            "easymodbusclient/customtopic2" });
+            easyModbus2Mqtt.AddReadOrder(EasyModbus.FunctionCode.ReadInputRegisters,
+            2, 0, 200); EasyModbus.ReadOrder readOrder = new
+            EasyModbus.ReadOrder(); readOrder.Hysteresis = new int[10] { 10, 10,
+            10, 10, 10, 10, 10, 10, 10, 10 }; readOrder.Unit = new string[10]
+            {"°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C", "°C"};
+            readOrder.Scale = new float[10] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f,
+            0.1f, 0.1f, 0.1f, 0.1f, 0.1f }; readOrder.Quantity = 10;
+            readOrder.StartingAddress = 10; readOrder.FunctionCode =
+            EasyModbus.FunctionCode.ReadHoldingRegisters;
+            easyModbus2Mqtt.AddReadOrder(readOrder); easyModbus2Mqtt.start(); }
+          </code>
+          <p>
+            Modbus-TCP Server which publishes the values on change to a
+            MQTT-Broker
+          </p>
+          <code>
+            class Program { static void Main(string[] args) { Program
+            application = new Program(); application.startServer(); } public
+            void startServer() { EasyModbus.ModbusServer modbusServer = new
+            EasyModbus.ModbusServer(); modbusServer.MqttRootTopic =
+            "examplemodbusserver"; modbusServer.MqttBrokerAddress =
+            "www.mqtt-dashboard.com"; modbusServer.Listen();
+            modbusServer.holdingRegistersChanged += new
+            EasyModbus.ModbusServer.HoldingRegistersChanged(holdingRegistersChanged);
+            Console.ReadKey(); modbusServer.StopListening(); } public void
+            holdingRegistersChanged(int startingAddress, int quantity) {
+            Console.WriteLine(startingAddress); Console.WriteLine(quantity); } }
+          </code>
+        </article>
+      </section>
+      <footer>
+        <div class="cardfooter">
+          <a
+            href="https://github.com/kadirboylu"
+            target="_blank"
+            class="fa fa-github"
+          ></a>
+        </div>
+        <div class="cardfooter">
+          <a
+            href="https://www.linkedin.com/in/kadirboylu/"
+            target="_blank"
+            class="fa fa-linkedin"
+          ></a>
+        </div>
+        <div class="cardfooter">
+          <a
+            href="https://www.youtube.com/channel/UCqKest-nnHQC7-shMEhDjQA"
+            target="_blank"
+            class="fa fa-youtube"
+          ></a>
+        </div>
+        <div class="cardfooter">
+          <a
+            href="https://www.instagram.com/kadrboylu/"
+            target="_blank"
+            class="fa fa-instagram"
+          ></a>
+        </div>
+        <div class="cardfooter">
+          <a
+            href="https://twitter.com/kadirboylu_"
+            target="_blank"
+            class="fa fa-twitter"
+          ></a>
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>

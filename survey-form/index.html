@@ -1,132 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
-    src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
-    async
+      src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
+      async
     ></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>COVID-19 Survey</title>
-</head>
-<body>
-  <main>
-  <div class="container">
-    <!-- HEADER -->
-    <header class="header">
-      <h1 id="title">COVID-19 Survey</h1>
-      <p id="description">Take our survey and answer the questions about the COVID-19 pandemic.</p>
-      <p>Thanks for your time...</p>
-    </header>
-    <!-- FORM -->
-    <form id="survey-form">
-      <!-- NAME -->
-      <div class="group">
-        <label for="name" id="name-label">Name</label>
-        <input id="name" name="name" type="text" placeholder="Enter your name" required>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+          <h1 id="title">COVID-19 Survey</h1>
+          <p id="description">
+            Take our survey and answer the questions about the COVID-19
+            pandemic.
+          </p>
+          <p>Thanks for your time...</p>
+        </header>
+        <!-- FORM -->
+        <form id="survey-form">
+          <!-- NAME -->
+          <div class="group">
+            <label for="name" id="name-label">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <!-- EMAIL -->
+          <div class="group">
+            <label for="email" id="email-label">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter your Email"
+              required
+            />
+          </div>
+          <!-- AGE -->
+          <div class="group">
+            <label for="number" id="number-label">Age (optional)</label>
+            <input
+              id="number"
+              name="age"
+              min="10"
+              max="99"
+              type="number"
+              placeholder="Age"
+            />
+          </div>
+          <!-- DROPDOWN MENU -->
+          <div class="group">
+            <p>Have you been sick due to the COVID-19 pandemic?</p>
+            <select name="dropdown-menu" id="dropdown">
+              <option disabled selected value>Make your selection</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+              <option value="more">I've been sick more than once</option>
+            </select>
+          </div>
+          <!-- RADIO BUTTONS -->
+          <div class="group cursor-pointer">
+            <p>Which vaccine did you choose?</p>
+            <label>
+              <input
+                type="radio"
+                name="vaccine"
+                value="biontech"
+                class="input-radio"
+              />Biontech</label
+            >
+            <label>
+              <input
+                type="radio"
+                name="vaccine"
+                value="sinovac"
+                class="input-radio"
+              />Sinovac</label
+            >
+            <label>
+              <input
+                type="radio"
+                name="vaccine"
+                value="other"
+                class="input-radio"
+              />Other</label
+            >
+            <label>
+              <input
+                type="radio"
+                name="vaccine"
+                value="no"
+                class="input-radio"
+              />I'm not vaccinated.</label
+            >
+          </div>
+          <!-- CHECKBOXES -->
+          <div class="group cursor-pointer">
+            <p>Select the activities you did during quarantine</p>
+            <label>
+              <input
+                type="checkbox"
+                name="choose"
+                value="online-classes"
+                class="checkbox"
+              />Taking online classes
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="choose"
+                value="remote-work"
+                class="checkbox"
+              />Working at home
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="choose"
+                value="cooking"
+                class="checkbox"
+              />Cooking
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="choose"
+                value="book"
+                class="checkbox"
+              />Reading books
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="choose"
+                value="watching"
+                class="checkbox"
+              />Watching TV Series/Movies.
+            </label>
+          </div>
+          <!-- TEXT AREA -->
+          <div class="group">
+            <p>Do you have any comments on COVID-19 and the survey?</p>
+            <textarea
+              name="covid19-comment"
+              id="covid19-comment"
+              placeholder="Enter your comment here"
+            ></textarea>
+          </div>
+          <!-- SUBMIT BUTTON -->
+          <div class="group">
+            <button type="submit" id="submit">Submit</button>
+          </div>
+        </form>
       </div>
-      <!-- EMAIL -->
-      <div class="group">
-        <label for="email" id="email-label">Email</label>
-        <input id="email" name="email" type="email" placeholder="Enter your Email" required>
-      </div>
-      <!-- AGE -->
-      <div class="group">
-        <label for="number" id="number-label">Age (optional)</label>
-        <input id="number" name="age" min="10" max="99" type="number" placeholder="Age">
-       </div>
-       <!-- DROPDOWN MENU -->
-      <div class="group">
-        <p>Have you been sick due to the COVID-19 pandemic?</p>
-        <select name="dropdown-menu" id="dropdown">
-          <option disabled selected value>Make your selection</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-          <option value="more">I've been sick more than once</option>
-        </select>
-      </div>
-      <!-- RADIO BUTTONS -->
-      <div class="group cursor-pointer">
-        <p>Which vaccine did you choose?</p>
-        <label>
-          <input
-          type="radio"
-          name="vaccine"
-          value="biontech"
-          class="input-radio"
-        />Biontech</label>
-        <label>
-          <input
-          type="radio"
-          name="vaccine"
-          value="sinovac"
-          class="input-radio"
-        />Sinovac</label>
-        <label>
-          <input
-          type="radio"
-          name="vaccine"
-          value="other"
-          class="input-radio"
-        />Other</label>
-        <label>  
-          <input
-          type="radio"
-          name="vaccine"
-          value="no"
-          class="input-radio"
-        >I'm not vaccinated.</label>
-      </div>
-      <!-- CHECKBOXES -->
-      <div class="group cursor-pointer">
-        <p>Select the activities you did during quarantine</p>
-        <label>
-          <input type="checkbox" name="choose" Value="online-classes" class="checkbox">Taking online classes
-        </label>
-        <label>
-          <input type="checkbox" name="choose" Value="remote-work" class="checkbox">Working at home
-        </label>
-        <label>
-          <input type="checkbox" name="choose" Value="cooking" class="checkbox">Cooking
-        </label>
-        <label>
-          <input type="checkbox" name="choose" Value="book" class="checkbox">Reading books
-        </label>
-        <label>
-          <input type="checkbox" name="choose" Value="watching" class="checkbox">Watching TV Series/Movies.
-        </label>
-      </div>
-      <!-- TEXT AREA -->
-      <div class="group">
-        <p>Do you have any comments on COVID-19 and the survey?</p>
-        <textarea name="covid19-comment" id="covid19-comment" placeholder="Enter your comment here"></textarea>
-      </div>
-      <!-- SUBMIT BUTTON -->
-      <div class="group">
-        <button type="submit" id="submit">Submit</button>
-      </div>
-    </form>
-  </div>
-  <footer>
-    <div class="card">
-      <a href="https://github.com/kadirboylu" target="_blank" class="fa fa-github"></a>
-    </div>
-    <div class="card">
-      <a href="https://www.linkedin.com/in/kadirboylu/" target="_blank" class="fa fa-linkedin"></a>
-    </div>
-    <div class="card">
-      <a href="https://www.youtube.com/channel/UCqKest-nnHQC7-shMEhDjQA" target="_blank" class="fa fa-youtube"></a>
-    </div>
-    <div class="card">
-      <a href="https://www.instagram.com/kadrboylu/" target="_blank" class="fa fa-instagram"></a>
-    </div>
-    <div class="card">
-      <a href="https://twitter.com/kadirboylu_" target="_blank" class="fa fa-twitter"></a>
-    </div>
-  </footer>
-  </main>
-</body>
+      <footer>
+        <div class="card">
+          <a
+            href="https://github.com/kadirboylu"
+            target="_blank"
+            class="fa fa-github"
+          ></a>
+        </div>
+        <div class="card">
+          <a
+            href="https://www.linkedin.com/in/kadirboylu/"
+            target="_blank"
+            class="fa fa-linkedin"
+          ></a>
+        </div>
+        <div class="card">
+          <a
+            href="https://www.youtube.com/channel/UCqKest-nnHQC7-shMEhDjQA"
+            target="_blank"
+            class="fa fa-youtube"
+          ></a>
+        </div>
+        <div class="card">
+          <a
+            href="https://www.instagram.com/kadrboylu/"
+            target="_blank"
+            class="fa fa-instagram"
+          ></a>
+        </div>
+        <div class="card">
+          <a
+            href="https://twitter.com/kadirboylu_"
+            target="_blank"
+            class="fa fa-twitter"
+          ></a>
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>

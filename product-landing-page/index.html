@@ -1,137 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script
-    src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
-    async
-  ></script>
-  <link rel="stylesheet" href="style.css">
-  <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>FLUTE STORE</title>
-</head>
-<body>
-  <main>
-  <header id="header">
-    <!-- logo -->
-    <div class="company-logo">
-      <img 
-      src="img/flute-store-logo.png" 
-      alt="Flute Store" 
-      id="header-img">
-    </div>
-    <!-- nav-bar -->
-    <nav id="nav-bar">
-      <ul>
-        <li><a href="#why-us" class="nav-link">Why Us?</a></li>
-        <li><a href="#get-info" class="nav-link">Get Information</a></li>
-        <li><a href="#categories" class="nav-link">Categories</a></li>
-      </ul>  
-    </nav>
-    <!-- toggle menu button -->
-    <div class="menu" id="toggle-button">
-      <div class="menu-line"></div>
-      <div class="menu-line"></div>
-      <div class="menu-line"></div>
-      </div> 
-    </header>
-    <!-- mail form -->
-    <form id="form" action="https://www.freecodecamp.com/email-submit">
-      <h2>Original and high quality flutes!</h2>
-      <input 
-      name="email" 
-      id="email" 
-      type="email"
-      placeholder="Enter your email adress"
-      required
-      />
-      <input type="submit" id="submit" value="Contact Us!">
-    </form>
-    <!-- why us -->
-    <section id="why-us">
-      <div class="why-us-card">
-        <h3>FREE DELIVERY</h3>
-        <img src="img/free-delivery.png" alt="free-delivery">
-      </div>
-      <div class="why-us-card">
-        <h3>LIFETIME WARRANTY</h3>
-        <img src="img/lifetime warranty.png" alt="life-time-warranty">
-      </div>
-      <div class="why-us-card">
-        <h3>ORIGINAL PRODUCT</h3>
-        <img src="img/original.png" alt="original-product">
-      </div>
-    </section>
-    <!-- get information -->
-    <section id="get-info">
-      <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/cdKa5Mwd3fU" frameborder="0" allowfullscreen></iframe>
-    </section>
-    <!-- categories -->
-    <section id="categories">
-      <div class="category-card">
-        <div class="heading">
-          <h3>BEGINNER</h3>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
+      async
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>FLUTE STORE</title>
+  </head>
+  <body>
+    <main>
+      <header id="header">
+        <!-- logo -->
+        <div class="company-logo">
+          <img
+            src="img/flute-store-logo.png"
+            alt="Flute Store"
+            id="header-img"
+          />
         </div>
-        <figure>
-          <img src="img/ardor-ng101.jfif" alt="ardor-ng101">
-          <figcaption>ARDOR NG101</figcaption>
-        </figure>
-        <p class="price">200$</p>
-        <button class="category-btn">BUY</button>
-      </div>
-      <div class="category-card">
-        <div class="heading">
-          <h3>INTERMEDIATE</h3>
+        <!-- nav-bar -->
+        <nav id="nav-bar">
+          <ul>
+            <li><a href="#why-us" class="nav-link">Why Us?</a></li>
+            <li><a href="#get-info" class="nav-link">Get Information</a></li>
+            <li><a href="#categories" class="nav-link">Categories</a></li>
+          </ul>
+        </nav>
+        <!-- toggle menu button -->
+        <div class="menu" id="toggle-button">
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
         </div>
-        <figure>
-          <img src="img/fame-ag200.jfif" alt="fame-ag200">
-          <figcaption>FAME AG200</figcaption>
-          <p class="price">400$</p>
-        </figure>
-        <button class="category-btn">BUY</button>
-      </div>
-      <div class="category-card">
-        <div class="heading">
-          <h3>ADVANCED</h3>
+      </header>
+      <!-- mail form -->
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <h2>Original and high quality flutes!</h2>
+        <input
+          name="email"
+          id="email"
+          type="email"
+          placeholder="Enter your email adress"
+          required
+        />
+        <input type="submit" id="submit" value="Contact Us!" />
+      </form>
+      <!-- why us -->
+      <section id="why-us">
+        <div class="why-us-card">
+          <h3>FREE DELIVERY</h3>
+          <img src="img/free-delivery.png" alt="free-delivery" />
         </div>
-        <figure>
-          <img src="img/yfl-212.jpg" alt="yfl-212">
-          <figcaption>YFL212</figcaption>
-          <p class="price">1000$</p>
-        </figure>
-        <button class="category-btn">BUY</button>
+        <div class="why-us-card">
+          <h3>LIFETIME WARRANTY</h3>
+          <img src="img/lifetime warranty.png" alt="life-time-warranty" />
+        </div>
+        <div class="why-us-card">
+          <h3>ORIGINAL PRODUCT</h3>
+          <img src="img/original.png" alt="original-product" />
+        </div>
+      </section>
+      <!-- get information -->
+      <section id="get-info">
+        <iframe
+          id="video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/cdKa5Mwd3fU"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <!-- categories -->
+      <section id="categories">
+        <div class="category-card">
+          <div class="heading">
+            <h3>BEGINNER</h3>
+          </div>
+          <figure>
+            <img src="img/ardor-ng101.jfif" alt="ardor-ng101" />
+            <figcaption>ARDOR NG101</figcaption>
+          </figure>
+          <p class="price">200$</p>
+          <button class="category-btn">BUY</button>
+        </div>
+        <div class="category-card">
+          <div class="heading">
+            <h3>INTERMEDIATE</h3>
+          </div>
+          <figure>
+            <img src="img/fame-ag200.jfif" alt="fame-ag200" />
+            <figcaption>FAME AG200</figcaption>
+            <p class="price">400$</p>
+          </figure>
+          <button class="category-btn">BUY</button>
+        </div>
+        <div class="category-card">
+          <div class="heading">
+            <h3>ADVANCED</h3>
+          </div>
+          <figure>
+            <img src="img/yfl-212.jpg" alt="yfl-212" />
+            <figcaption>YFL212</figcaption>
+            <p class="price">1000$</p>
+          </figure>
+          <button class="category-btn">BUY</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="cardfooter">
+        <a
+          href="https://github.com/kadirboylu"
+          target="_blank"
+          class="fa fa-github"
+        ></a>
       </div>
-    </section>
-  </main>
-  <footer>
-    <div class="cardfooter">
-      <a href="https://github.com/kadirboylu" target="_blank" class="fa fa-github"></a>
-    </div>
-    <div class="cardfooter">
-      <a href="https://www.linkedin.com/in/kadirboylu/" target="_blank" class="fa fa-linkedin"></a>
-    </div>
-    <div class="cardfooter">
-      <a href="https://www.youtube.com/channel/UCqKest-nnHQC7-shMEhDjQA" target="_blank" class="fa fa-youtube"></a>
-    </div>
-    <div class="cardfooter">
-      <a href="https://www.instagram.com/kadrboylu/" target="_blank" class="fa fa-instagram"></a>
-    </div>
-    <div class="cardfooter">
-      <a href="https://twitter.com/kadirboylu_" target="_blank" class="fa fa-twitter"></a>
-    </div>
-  </footer>
-</body>
-<!-- menu script -->
-<script>
-  const toggleButton = document.getElementById('toggle-button');
-  const naviList = document.getElementById('nav-bar');
-  
-  toggleButton.addEventListener('click', () => {
-    naviList.classList.toggle('active');
-  })
-</script>
+      <div class="cardfooter">
+        <a
+          href="https://www.linkedin.com/in/kadirboylu/"
+          target="_blank"
+          class="fa fa-linkedin"
+        ></a>
+      </div>
+      <div class="cardfooter">
+        <a
+          href="https://www.youtube.com/channel/UCqKest-nnHQC7-shMEhDjQA"
+          target="_blank"
+          class="fa fa-youtube"
+        ></a>
+      </div>
+      <div class="cardfooter">
+        <a
+          href="https://www.instagram.com/kadrboylu/"
+          target="_blank"
+          class="fa fa-instagram"
+        ></a>
+      </div>
+      <div class="cardfooter">
+        <a
+          href="https://twitter.com/kadirboylu_"
+          target="_blank"
+          class="fa fa-twitter"
+        ></a>
+      </div>
+    </footer>
+  </body>
+  <!-- menu script -->
+  <script>
+    const toggleButton = document.getElementById("toggle-button");
+    const naviList = document.getElementById("nav-bar");
+
+    toggleButton.addEventListener("click", () => {
+      naviList.classList.toggle("active");
+    });
+  </script>
 </html>
