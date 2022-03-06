@@ -131,6 +131,7 @@ footer {
 }
 
 @media (max-width: 850px) {
+  /* For mobile phones: */
   #navbar ul {
     border: 1px solid;
     height: 207px;
@@ -160,5 +161,20 @@ footer {
 
   .main-doc-img {
     width: 90%;
+  }
+
+  code {
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: break-all;
+    word-wrap: normal;
+    line-height: 1.5;
+    background-color: #ddd;
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.2rem;
   }
 }
