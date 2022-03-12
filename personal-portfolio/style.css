@@ -8,7 +8,7 @@
   padding: 0;
 }
 body {
-  min-width: 400px;
+  min-width: 300px;
   font-family: "exo 2", sans-serif;
   background: linear-gradient(75deg, #566d85 0%, #262527 100%);
 }
@@ -237,7 +237,7 @@ footer a {
 }
 @media (max-width: 425px) {
   footer p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 /* FOOTER END */
