@@ -3,6 +3,7 @@
 - [Survey Form](https://kadirboylu.github.io/survey-form/)
 - [Product Landing Page](https://kadirboylu.github.io/product-landing-page/)
 - [Technical Documentation Page](https://kadirboylu.github.io/technical-documentation-page/)
+- [Personal Portfolio Page](https://kadirboylu.github.io/personal-portfolio/)
 
 ---
 
