@@ -6,6 +6,10 @@
 - [Personal Portfolio Page](https://kadirboylu.github.io/personal-portfolio/)
 
 ---
+# **JS30 Projects**
+- [JS Drum Kit](https://kadirboylu.github.io/javascript-drum-kit/)
+
+---
 
 - [Linkedin](https://www.linkedin.com/in/kadirboylu/) 
 - [Twitter](https://twitter.com/kadirboylu_) 
