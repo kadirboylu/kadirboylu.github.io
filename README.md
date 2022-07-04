@@ -10,6 +10,7 @@
 # **JS30 Projects**
 - [JS Drum Kit](https://kadirboylu.github.io/javascript-drum-kit/)
 - [CSS + JS Clock](https://kadirboylu.github.io/css-javascript-clock/)
+- [CSS Variables](https://kadirboylu.github.io/css-variables/)
 
 ---
 
