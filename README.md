@@ -11,6 +11,7 @@
 - [JS Drum Kit](https://kadirboylu.github.io/javascript-drum-kit/)
 - [CSS + JS Clock](https://kadirboylu.github.io/css-javascript-clock/)
 - [CSS Variables](https://kadirboylu.github.io/css-variables/)
+- [Array Cardio 1](https://kadirboylu.github.io/array-cardio-1/)
 
 ---
 
