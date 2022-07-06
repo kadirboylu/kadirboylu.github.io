@@ -12,6 +12,7 @@
 - [CSS + JS Clock](https://kadirboylu.github.io/css-javascript-clock/)
 - [CSS Variables](https://kadirboylu.github.io/css-variables/)
 - [Array Cardio 1](https://kadirboylu.github.io/array-cardio-1/)
+- [Flex Panel Gallery](https://kadirboylu.github.io/flex-panel-gallery/)
 
 ---
 
