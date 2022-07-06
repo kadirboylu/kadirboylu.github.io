@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Array Cardio 💪</title>
   </head>
-  <body>
+  <body id="body">
     <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
     <script>
       // Get your shorts on - this is an array workout!
@@ -104,20 +104,25 @@
       console.log(
         `4. How many years did all the inventors live all together?\nAnswer: ${totalYears}`
       );
-      // 5. Sort the inventors by years lived
+      console.log("5. Sort the inventors by years lived");
       const oldest = inventors.sort(
         (a, b) => b.passed - b.year - (a.passed - a.year)
       );
 
       console.table(oldest);
-      // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-      // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
+      console.log(
+        `6. create a list of Boulevards in Paris that contain 'de' anywhere in the name\ngo to: https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris\npaste it to the console:\nconst category = document.querySelector(".mw-category");\nconst links = Array.from(category.querySelectorAll("a")); // also we can use [...category.querySelectorAll('a');\nconst de = links\n.map((link) => link.textContent)\n.filter((streetName) => streetName.includes("de"));`
+      );
       // 7. sort Exercise
-      // Sort the people alphabetically by last name
+      console.log("7. Sort the people alphabetically by last name");
+      const alpha = people.sort((lastOne, nextOne) => {
+        const [aLast, aFirst] = lastOne.split(", ");
+        const [bLast, bFirst] = nextOne.split(", ");
 
+        return aLast > bLast ? 1 : -1;
+      });
+      console.log(alpha);
       // 8. Reduce Exercise
-      // Sum up the instances of each of these
       const data = [
         "car",
         "car",
@@ -134,6 +139,17 @@
         "car",
         "truck",
       ];
+      console.log(`8. Sum up the instances of each of these:\n[${data}]`);
+
+      const transportation = data.reduce(function (obj, item) {
+        if (!obj[item]) {
+          obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+      }, {});
+
+      console.log(transportation);
     </script>
   </body>
 </html>
