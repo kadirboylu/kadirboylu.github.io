@@ -22,7 +22,7 @@
 - [Array Cardio 2](https://kadirboylu.github.io/array-cardio-2/)
 - [Fun with HTML5 Canvas](https://kadirboylu.github.io/fun-with-html5-canvas/)
 - [Dev Tools Domination](https://kadirboylu.github.io/dev-tools-domination/)
-- [Hold Shift and Check Checkboxes](https://kadirboylu.github.io/hold_shift _and_check_checkboxes/)
+- [Hold Shift and Check Checkboxes](https://kadirboylu.github.io/hold-shift-and-check-checkboxes/)
 
 ---
 
