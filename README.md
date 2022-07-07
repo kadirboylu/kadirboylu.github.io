@@ -1,9 +1,14 @@
+# kadirboylu.github.io
+
 # **FreeCodeCamp Projects**
+## Responsive Web Design
 - [Tribute Page](https://kadirboylu.github.io/tribute-page/)
 - [Survey Form](https://kadirboylu.github.io/survey-form/)
 - [Product Landing Page](https://kadirboylu.github.io/product-landing-page/)
 - [Technical Documentation Page](https://kadirboylu.github.io/technical-documentation-page/)
 - [Personal Portfolio Page](https://kadirboylu.github.io/personal-portfolio/)
+
+### [Certificate](https://www.freecodecamp.org/certification/kadirboylu/responsive-web-design)
 
 ---
 
@@ -16,6 +21,7 @@
 - [Type Ahead](https://kadirboylu.github.io/type-ahead/)
 - [Array Cardio 2](https://kadirboylu.github.io/array-cardio-2/)
 - [Fun with HTML5 Canvas](https://kadirboylu.github.io/fun-with-html5-canvas/)
+
 ---
 
 - [Linkedin](https://www.linkedin.com/in/kadirboylu/) 
