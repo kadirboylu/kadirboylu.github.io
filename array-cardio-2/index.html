@@ -48,8 +48,8 @@
       console.log("Delete the comment with the ID of 823423:");
       const index = comments.findIndex((comment) => comment.id === 823423);
       console.log("Index: " + index);
-      // comments.splice(index, 1); //this will replace the original array
-      // This will not change the original array
+      // comments.splice(index, 1); //this will replace the original array (splice)
+      // This will not change the original array (slice)
       const newComments = [
         ...comments.slice(0, index),
         ...comments.slice(index + 1),
