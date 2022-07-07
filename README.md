@@ -14,6 +14,7 @@
 - [Array Cardio 1](https://kadirboylu.github.io/array-cardio-1/)
 - [Flex Panel Gallery](https://kadirboylu.github.io/flex-panel-gallery/)
 - [Type Ahead](https://kadirboylu.github.io/type-ahead/)
+- [Array Cardio 2](https://kadirboylu.github.io/array-cardio-2/)
 
 ---
 
