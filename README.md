@@ -15,7 +15,7 @@
 - [Flex Panel Gallery](https://kadirboylu.github.io/flex-panel-gallery/)
 - [Type Ahead](https://kadirboylu.github.io/type-ahead/)
 - [Array Cardio 2](https://kadirboylu.github.io/array-cardio-2/)
-
+- [Fun with HTML5 Canvas](https://kadirboylu.github.io/fun-with-html5-canvas/)
 ---
 
 - [Linkedin](https://www.linkedin.com/in/kadirboylu/) 
