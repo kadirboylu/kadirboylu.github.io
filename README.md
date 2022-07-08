@@ -23,6 +23,7 @@
 - [Fun with HTML5 Canvas](https://kadirboylu.github.io/fun-with-html5-canvas/)
 - [Dev Tools Domination](https://kadirboylu.github.io/dev-tools-domination/)
 - [Hold Shift and Check Checkboxes](https://kadirboylu.github.io/hold-shift-and-check-checkboxes/)
+- [Custom Video Player](https://kadirboylu.github.io/custom-video-player/)
 
 ---
 
