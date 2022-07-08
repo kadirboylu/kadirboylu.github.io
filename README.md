@@ -24,6 +24,7 @@
 - [Dev Tools Domination](https://kadirboylu.github.io/dev-tools-domination/)
 - [Hold Shift and Check Checkboxes](https://kadirboylu.github.io/hold-shift-and-check-checkboxes/)
 - [Custom Video Player](https://kadirboylu.github.io/custom-video-player/)
+- [Key Sequence Detection](https://kadirboylu.github.io/key-sequence-detection/)
 
 ---
 
