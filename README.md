@@ -26,6 +26,7 @@
 - [Custom Video Player](https://kadirboylu.github.io/custom-video-player/)
 - [Key Sequence Detection](https://kadirboylu.github.io/key-sequence-detection/)
 - [Slide In on Scroll](https://kadirboylu.github.io/slide-in-on-scroll/)
+- [JavaScript References vs Copying](https://kadirboylu.github.io/javascript-references-vs-copying/)
 
 ---
 
