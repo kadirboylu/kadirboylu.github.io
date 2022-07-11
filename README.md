@@ -28,6 +28,7 @@
 - [Slide In on Scroll](https://kadirboylu.github.io/slide-in-on-scroll/)
 - [JavaScript References vs Copying](https://kadirboylu.github.io/javascript-references-vs-copying/)
 - [Local Storage](https://kadirboylu.github.io/local-storage/)
+- [Mouse Move Shadow](https://kadirboylu.github.io/mouse-move-shadow/)
 
 ---
 
