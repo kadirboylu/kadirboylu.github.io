@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Get User Media Code Along!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>WEBCAM FUN!</h1>
+    <div class="photobooth">
+      <div class="controls">
+        <div class="buttons">
+          <button onClick="takePhoto()">Take Photo</button>
+          <button onClick="showPanel()" id="green-screen">Green Screen</button>
+          <button onClick="hidePanel()" id="rgb-split">RGB Split</button>
+          <button onClick="hidePanel()" id="red-effect">Red Effect</button>
+        </div>
+        <div class="rgb" id="panel">
+          <div class="input-group">
+            <label for="rmin">Red Min</label>
+            <input type="range" min="0" max="255" name="rmin" />
+          </div>
+          <div class="input-group">
+            <label for="rmax">Red Max</label>
+            <input type="range" min="0" max="255" name="rmax" />
+          </div>
+          <br />
+
+          <div class="input-group">
+            <label for="gmin">Green Min</label>
+            <input type="range" min="0" max="255" name="gmin" />
+          </div>
+          <div class="input-group">
+            <label for="gmax">Green Max</label>
+            <input type="range" min="0" max="255" name="gmax" />
+          </div>
+          <br />
+
+          <div class="input-group">
+            <label for="bmin">Blue Min</label>
+            <input type="range" min="0" max="255" name="bmin" />
+          </div>
+          <div class="input-group">
+            <label for="bmax">Blue Max</label>
+            <input type="range" min="0" max="255" name="bmax" />
+          </div>
+        </div>
+      </div>
+
+      <canvas class="photo"></canvas>
+      <video class="player"></video>
+      <div class="strip"></div>
+    </div>
+
+    <audio class="snap" src="./snap.mp3" hidden></audio>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

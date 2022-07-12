@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&family=The+Nautigal:wght@700&display=swap");
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --top: 190px;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+  background: #ffc600;
+}
+
+h1 {
+  text-align: center;
+}
+
+.photobooth {
+  max-width: 1000px;
+  margin: 2rem auto;
+  border-radius: 2px;
+}
+
+/*clearfix*/
+.photobooth:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.photo {
+  border: solid 5px black;
+  border-radius: 3%;
+  width: 100%;
+  float: left;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.player {
+  border: solid 5px black;
+  border-radius: 10%;
+  position: absolute;
+  top: var(--top);
+  right: 20px;
+  width: 250px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.rgb {
+  display: flex;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.input-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bolder;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons button {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 150px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.buttons button:hover {
+  background-color: rgb(230, 216, 198);
+}
+
+.buttons button:active {
+  background-color: rgba(230, 216, 198, 0.692);
+}
+/*
+  Strip!
+*/
+
+.strip {
+  padding: 2rem;
+}
+
+.strip img {
+  width: 100px;
+  overflow-x: scroll;
+  padding: 0.8rem 0.8rem 2.5rem 0.8rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+.strip a:nth-child(5n + 1) img {
+  transform: rotate(10deg);
+}
+.strip a:nth-child(5n + 2) img {
+  transform: rotate(-2deg);
+}
+.strip a:nth-child(5n + 3) img {
+  transform: rotate(8deg);
+}
+.strip a:nth-child(5n + 4) img {
+  transform: rotate(-11deg);
+}
+.strip a:nth-child(5n + 5) img {
+  transform: rotate(12deg);
+}
+
+#panel {
+  display: none;
+}
