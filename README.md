@@ -31,6 +31,7 @@
 - [Mouse Move Shadow](https://kadirboylu.github.io/mouse-move-shadow/)
 - [Sort Without Articles](https://kadirboylu.github.io/sort-without-articles/)
 - [Adding Up Times with Reduce](https://kadirboylu.github.io/adding-up-times-with-reduce/)
+- [Webcam Fun](https://kadirboylu.github.io/webcam-fun/)
 
 ---
 
