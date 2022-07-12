@@ -32,6 +32,7 @@
 - [Sort Without Articles](https://kadirboylu.github.io/sort-without-articles/)
 - [Adding Up Times with Reduce](https://kadirboylu.github.io/adding-up-times-with-reduce/)
 - [Webcam Fun](https://kadirboylu.github.io/webcam-fun/)
+- [Speech Detection](https://kadirboylu.github.io/speech-detection/)
 
 ---
 
