@@ -33,6 +33,7 @@
 - [Adding Up Times with Reduce](https://kadirboylu.github.io/adding-up-times-with-reduce/)
 - [Webcam Fun](https://kadirboylu.github.io/webcam-fun/)
 - [Speech Detection](https://kadirboylu.github.io/speech-detection/)
+- [Geolocation](https://kadirboylu.github.io/geolocation/)
 
 ---
 
