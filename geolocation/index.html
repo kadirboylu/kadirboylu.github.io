@@ -103,11 +103,10 @@
         (data) => {
           console.log(data);
           speed.textContent = data.coords.speed;
-          arrow.style.transform = `rotate(${data.coords.heading})`;
+          arrow.style.transform = `rotate(${data.coords.heading}deg)`;
         },
         (err) => {
-          console.err(err);
-          alert("HEY, YOU GOTTA ALLOW THAT TO HAPPEN!!!");
+          console.error(err);
         }
       );
     </script>
