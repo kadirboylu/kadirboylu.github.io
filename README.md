@@ -34,6 +34,7 @@
 - [Webcam Fun](https://kadirboylu.github.io/webcam-fun/)
 - [Speech Detection](https://kadirboylu.github.io/speech-detection/)
 - [Geolocation](https://kadirboylu.github.io/geolocation/)
+- [Follow Along Link Highlighter](https://kadirboylu.github.io/follow-along-link-highlighter/)
 
 ---
 
