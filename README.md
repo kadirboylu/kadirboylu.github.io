@@ -36,6 +36,7 @@
 - [Geolocation](https://kadirboylu.github.io/geolocation/)
 - [Follow Along Link Highlighter](https://kadirboylu.github.io/follow-along-link-highlighter/)
 - [Speech Synthesis](https://kadirboylu.github.io/speech-synthesis/)
+- [Sticky Nav](https://kadirboylu.github.io/sticky-nav/)
 
 ---
 
