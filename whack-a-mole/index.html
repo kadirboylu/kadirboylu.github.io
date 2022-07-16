@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Whack A Mole!</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Whack-a-mole! <span class="score">0</span></h1>
+    <div class="container">
+      <button class="start-btn" onClick="startGame()">START!</button>
+    </div>
+    <div class="container">
+      <button class="levels" data-min="750" data-max="1500">LEVEL 1</button>
+      <button class="levels" data-min="500" data-max="1000">LEVEL 2</button>
+      <button class="levels" data-min="300" data-max="750">LEVEL 3</button>
+    </div>
+    <h2 class="info">Choose Level</h2>
+
+    <div class="game">
+      <div class="hole hole1">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole2">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole3">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole4">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole5">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole6">
+        <div class="mole"></div>
+      </div>
+    </div>
+    <div class="score-headings">
+      <p class="score-level">LEVEL 1 SCORE BOARD</p>
+      <p class="score-level">LEVEL 2 SCORES BOARD</p>
+      <p class="score-level">LEVEL 3 SCORES BOARD</p>
+    </div>
+    <div class="score-board">
+      <div class="score-data level-1">
+        <ul>
+          <li><span>Player: Kadir Boylu</span><span>SCORE: 12</span></li>
+        </ul>
+      </div>
+      <div class="score-data level-2"></div>
+      <div class="score-data level-3"></div>
+    </div>
+    <script>
+      const holes = document.querySelectorAll(".hole");
+      const scoreBoard = document.querySelector(".score");
+      const moles = document.querySelectorAll(".mole");
+      const levels = document.querySelectorAll(".levels");
+      const infoText = document.querySelector(".info");
+
+      let timeInterval;
+      let lastHole;
+      let timeUp = false;
+      let score = 0;
+      let minTime = 750;
+      let maxTime = 1500;
+
+      let player = prompt("Please enter your name", "Player 1");
+      const scoreArray = JSON.parse(localStorage.getItem("scoreArray")) || [];
+      let activeLevel = "LEVEL 1";
+
+      const level1Scores = document.querySelector(".level-1");
+      const level2Scores = document.querySelector(".level-2");
+      const level3Scores = document.querySelector(".level-3");
+
+      function randomTime(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      }
+
+      function randomHole(holes) {
+        const idx = Math.floor(Math.random() * holes.length);
+        const hole = holes[idx];
+
+        if (hole === lastHole) {
+          return randomHole(holes);
+        }
+
+        lastHole = hole;
+        return hole;
+      }
+
+      function peep() {
+        const time = randomTime(minTime, maxTime);
+        const hole = randomHole(holes);
+        hole.classList.add("up");
+
+        setTimeout(() => {
+          hole.classList.remove("up");
+          if (!timeUp) peep();
+        }, time);
+      }
+
+      function startGame() {
+        clearInterval(timeInterval);
+        let timeLeft = 10;
+        scoreBoard.textContent = 0;
+        timeUp = false;
+        score = 0;
+        infoText.textContent = `Game has started. Time remaining: ${timeLeft}`;
+
+        peep();
+
+        timeInterval = setInterval(() => {
+          timeLeft--;
+          infoText.textContent = `Game has started. Time remaining: ${timeLeft}`;
+        }, 1000);
+
+        setTimeout(() => {
+          timeUp = true;
+          clearInterval(timeInterval);
+          infoText.textContent =
+            "Game over. Press the 'START' button to play again.";
+          scoreList(player, score, activeLevel);
+          scoreBoards(scoreArray);
+        }, 10000);
+        this.reset();
+      }
+
+      function bonk(e) {
+        if (!e.isTrusted) return; // cheater!
+        score++;
+        this.classList.remove("up");
+        scoreBoard.textContent = score;
+      }
+
+      function changeLevel() {
+        timeUp = true;
+        clearInterval(timeInterval);
+        minTime = this.dataset.min;
+        maxTime = this.dataset.max;
+        infoText.textContent = `start the game (${this.textContent})`;
+        activeLevel = this.textContent;
+      }
+
+      function scoreList(player, score, activeLevel) {
+        scoreArray.push({ player: player, score: score, level: activeLevel });
+        localStorage.setItem("scoreArray", JSON.stringify(scoreArray));
+      }
+
+      function scoreBoards(arr) {
+        level1Scores.innerHTML = arr
+          .filter((result) => result.level === "LEVEL 1")
+          .map((result) => {
+            return `
+            <li><span>Player: ${result.player}</span><span>SCORE: ${result.score}</span></li>
+            `;
+          })
+          .join("");
+
+        level2Scores.innerHTML = arr
+          .filter((result) => result.level === "LEVEL 2")
+          .map((result) => {
+            return `
+            <li><span>Player: ${result.player}</span><span>SCORE: ${result.score}</span></li>
+            `;
+          })
+          .join("");
+
+        level3Scores.innerHTML = arr
+          .filter((result) => result.level === "LEVEL 3")
+          .map((result) => {
+            return `
+            <li><span>Player: ${result.player}</span><span>SCORE: ${result.score}</span></li>
+            `;
+          })
+          .join("");
+      }
+
+      moles.forEach((mole) => mole.addEventListener("click", bonk));
+      moles.forEach((mole) => mole.addEventListener("touch", bonk));
+
+      levels.forEach((level) => level.addEventListener("click", changeLevel));
+
+      scoreBoards(scoreArray);
+    </script>
+  </body>
+</html>
