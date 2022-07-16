@@ -40,6 +40,7 @@
 - [Event Capture, Propagation, Bubbling and Once](https://kadirboylu.github.io/event-capture-propagation-bubbling-and-once/)
 - [Stripe Follow Along Nav](https://kadirboylu.github.io/stripe-follow-along-nav/)
 - [Click and Drag](https://kadirboylu.github.io/click-and-drag/)
+- [Video Speed Controller](https://kadirboylu.github.io/video-speed-controller/)
 
 ---
 
