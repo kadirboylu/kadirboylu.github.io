@@ -16,9 +16,9 @@
       <button class="start-btn" onClick="startGame()">START!</button>
     </div>
     <div class="container">
-      <button class="levels" data-min="750" data-max="1500">LEVEL 1</button>
-      <button class="levels" data-min="500" data-max="1000">LEVEL 2</button>
-      <button class="levels" data-min="300" data-max="750">LEVEL 3</button>
+      <button class="levels" data-min="500" data-max="1200">LEVEL 1</button>
+      <button class="levels" data-min="300" data-max="1000">LEVEL 2</button>
+      <button class="levels" data-min="200" data-max="800">LEVEL 3</button>
     </div>
     <h2 class="info">Choose Level</h2>
 
@@ -67,8 +67,8 @@
       let lastHole;
       let timeUp = false;
       let score = 0;
-      let minTime = 750;
-      let maxTime = 1500;
+      let minTime = 500;
+      let maxTime = 1200;
 
       let player = prompt("Please enter your name", "Player 1");
       const scoreArray = JSON.parse(localStorage.getItem("scoreArray")) || [];
@@ -128,7 +128,6 @@
           scoreList(player, score, activeLevel);
           scoreBoards(scoreArray);
         }, 10000);
-        this.reset();
       }
 
       function bonk(e) {
@@ -141,8 +140,8 @@
       function changeLevel() {
         timeUp = true;
         clearInterval(timeInterval);
-        minTime = this.dataset.min;
-        maxTime = this.dataset.max;
+        minTime = parseInt(this.dataset.min);
+        maxTime = parseInt(this.dataset.max);
         infoText.textContent = `start the game (${this.textContent})`;
         activeLevel = this.textContent;
       }
