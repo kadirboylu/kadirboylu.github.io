@@ -42,6 +42,7 @@
 - [Click and Drag](https://kadirboylu.github.io/click-and-drag/)
 - [Video Speed Controller](https://kadirboylu.github.io/video-speed-controller/)
 - [Countdown Timer](https://kadirboylu.github.io/countdown-timer/)
+- [Whack a Mole](https://kadirboylu.github.io/whack-a-mole/)
 
 ---
 
