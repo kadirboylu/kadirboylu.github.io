@@ -41,6 +41,7 @@
 - [Stripe Follow Along Nav](https://kadirboylu.github.io/stripe-follow-along-nav/)
 - [Click and Drag](https://kadirboylu.github.io/click-and-drag/)
 - [Video Speed Controller](https://kadirboylu.github.io/video-speed-controller/)
+- [Countdown Timer](https://kadirboylu.github.io/countdown-timer/)
 
 ---
 
